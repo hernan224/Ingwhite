@@ -5,9 +5,9 @@
 global $posts_excluidos;
 
 //Mostrar noticias destacadas unicamente en el Home
-if ( $paged < 2 ){
+/*if ( $paged < 2 ){*/
     get_template_part( 'content', 'destacadas_home' );
-}
+/*}*/
 
 ?>
 
@@ -39,24 +39,38 @@ if ( $paged < 2 ){
                                     $modificar_query['post__not_in'] = $posts_excluidos;
                                 }
 
+                                //$modificar_query['posts_per_page'] = 15;
+
                                 $args = array_merge($wp_query->query_vars, $modificar_query);
 
                                 $home_query = new WP_query($args);
 
                                 ?>
 
-                                <?php if (have_posts()) :
+                                <?php if ($home_query->have_posts() && ($paged < 2)) :
                                     $i=1;
 
                                     while ($home_query->have_posts()) : $home_query->the_post(); ?>
 
-                                        <?php if ($i === 4 && $paged < 2) :  //Muestro publi interna 1?>
+                                        <?php if ($i === 4 /*&& $paged < 2*/) :  //Muestro publi interna 1?>
 
                                             <?php get_sidebar('publi_i1'); ?>
 
-                                        <?php elseif($i === 7 && $paged > 2) : //Muestro publi internar 2?>
+                                            <div class="item--masonry">
+
+                                                <?php get_template_part( 'content', 'noticias' );	?>
+
+                                            </div> <!--/.item--masonry-->
+
+                                        <?php elseif($i === 7 /*&& $paged < 2*/) : //Muestro publi internar 2?>
 
                                             <?php get_sidebar('publi_i2'); ?>
+
+                                            <div class="item--masonry">
+
+                                                <?php get_template_part( 'content', 'noticias' );	?>
+
+                                            </div> <!--/.item--masonry-->
 
                                         <?php else : //Muestro noticia?>
 
@@ -68,20 +82,18 @@ if ( $paged < 2 ){
 
                                         <?php endif; ?>
 
-                                        <?php if ($paged < 2) {
+                                        <?php /*if ($paged < 2) {*/
                                             //array_push($posts_excluidos, get_the_ID());
                                             $posts_actuales[] = $post->ID;
-                                        } ?>
+                                        /*}*/ ?>
 
                                         <?php $i++; ?>
 
-                                    <?php endwhile;
-                                        //print_r($posts_excluidos);
-                                ?>
+                                    <?php endwhile; ?>
 
                                 </div> <!--/#masonry-->
 
-                                        <?php bones_page_navi(); ?>
+                                        <?php //bones_page_navi(); ?>
 
                                 <?php else : ?>
 
@@ -98,6 +110,8 @@ if ( $paged < 2 ){
                                     $posts_excluidos = array_merge($posts_excluidos, $posts_actuales);
                                 }
 
+                                wp_reset_postdata();
+
                             //print_r($posts_excluidos);
                             ?>
 
@@ -113,6 +127,21 @@ if ( $paged < 2 ){
 				</div>
 
             </section> <!--/.cuerpo_central--home-->
+
+        <?php
+
+        /* Seccion noticias deportes en Home */
+            $categoria_query = 'deportes';
+            include(locate_template('content-cat_home.php'));
+        ?>
+
+        <?php
+            /* Seccion noticias deportes en Home */
+            $categoria_query = 'puerto';
+            include(locate_template('content-cat_home.php'));
+        ?>
+
+
 
 
 <?php get_footer(); ?>
