@@ -18,11 +18,40 @@
 
                 <header class="article-header">
 
-                  <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+                  <h1 class="h2 entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                  <p class="byline vcard">
-                    <?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-                  </p>
+                    <p class="byline vcard">
+                        <?php
+                        $category = get_the_category();
+                        if($category[0]){
+                            echo '<a class="categoria-noticia" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+                        }
+                        ?>
+
+                        <span class="fecha-noticias"> <?php echo get_the_time('d/m/Y') ?> </span>
+
+                        <?php //printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('d/m/Y'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+                    </p>
+
+                    <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it.
+
+                        $factor = 1.7;
+                        $ancho_th = 750;
+                        $alto_th = $ancho_th/$factor; ?>
+
+                        <figure>
+                            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                                <?php the_post_thumbnail(array( $ancho_th, $alto_th, 'bfi_thumb' => true, 'crop' => true, 'class' => " img-responsive" )); ?>
+                            </a>
+                        </figure>
+
+                    <?php endif; ?>
+
+                    <?php
+                    if( $post->post_excerpt ) {
+                        the_excerpt();
+                    }
+                    ?>
 
                 </header> <?php // end article header ?>
 

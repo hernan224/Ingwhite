@@ -2,9 +2,13 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content" class="wrap row between-md">
 
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+					<div id="main" class="col-xs-12 col-md-8" role="main">
+
+                        <!--Widget para publicidad ancho de contenido-->
+                        <?php get_sidebar('publi_ac'); ?>
+                        <!--Fin widget publicidad ancho contenido-->
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -45,7 +49,11 @@
 
 					</div>
 
-					<?php get_sidebar(); ?>
+                    <div class="col-xs-12 col-md-4">
+
+                        <?php get_sidebar('principal'); ?>
+
+                    </div>
 
 				</div>
 
