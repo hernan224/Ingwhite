@@ -1,3 +1,8 @@
+# Ingeniero White
+
+Template para el sitio de Ingeniero White.
+Basado en Bones.
+
 # Bones
 A Lightweight Wordpress Development Theme
 
