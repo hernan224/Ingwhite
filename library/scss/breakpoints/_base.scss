@@ -20,11 +20,10 @@ html {
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
-	color: $text-color;
-	background-color: $gray;
+	color: $azul-claro;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -83,7 +82,7 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $naranja;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -159,6 +158,15 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+
+#top-header {
+  background: $turquesa;
+  color: $white;
+  font-size: 12px;
+  height: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
 
 .header {
 	background-color: $black;

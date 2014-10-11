@@ -160,7 +160,6 @@ em,
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -172,7 +171,6 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
 }
 
@@ -397,8 +395,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -509,6 +505,7 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/**********************************/
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -571,7 +568,6 @@ p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
@@ -687,7 +683,6 @@ probably best not to use it. I mean, were you going to anyway? */
 
 .row {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -753,7 +748,6 @@ probably best not to use it. I mean, were you going to anyway? */
 .col-xs-offset-11,
 .col-xs-offset-12 {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1013,7 +1007,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-sm-offset-11,
   .col-sm-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1275,7 +1268,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-md-offset-11,
   .col-md-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1535,7 +1527,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-lg-offset-11,
   .col-lg-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1921,7 +1912,6 @@ textarea,
   color: #5c6b80;
   border-radius: 3px;
   vertical-align: middle;
-  -webkit-box-shadow: none;
   box-shadow: none;
   border: 0;
   width: 100%;
@@ -2200,8 +2190,7 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
-  background-color: #eaedf2;
+  color: #777777;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -2256,7 +2245,7 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #f04f24;
   /* on hover */
   /* on click */
   /* mobile tap color */
@@ -2321,6 +2310,15 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+#top-header {
+  background: #32878e;
+  color: white;
+  font-size: 12px;
+  height: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
 .header {
   background-color: #323944;
 }
@@ -3172,7 +3170,6 @@ be set to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important;
   }

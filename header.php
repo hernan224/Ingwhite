@@ -42,6 +42,21 @@
 	<body <?php body_class(); ?>>
 
 		<div id="container">
+			
+			<div id="top-header">
+				<div class="wrap cf">
+					
+					<?php // Show the date ?>	
+					<span class="header-date"><?php echo date( 'l, j \of F \of Y' ); ?></span>
+					
+					<?php // Show the weather ?>	
+					<div id="header-weather">
+						<?php // ?>
+					</div>
+						
+				</div>
+					
+			</div>
 
 			<header class="header" role="banner">
 
@@ -62,10 +77,10 @@
     					'menu_class' => 'nav top-nav cf',               // adding custom nav class
     					'theme_location' => 'main-nav',                 // where it's located in the theme
     					'before' => '',                                 // before the menu
-        			'after' => '',                                  // after the menu
-        			'link_before' => '',                            // before each link
-        			'link_after' => '',                             // after each link
-        			'depth' => 0,                                   // limit the depth of the nav
+        				'after' => '',                                  // after the menu
+        				'link_before' => '',                            // before each link
+        				'link_after' => '',                             // after each link
+        				'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
 
