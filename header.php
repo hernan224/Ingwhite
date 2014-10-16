@@ -46,8 +46,40 @@
 			<div id="top-header">
 				<div class="wrap cf">
 					
-					<?php // Show the date ?>	
-					<span class="header-date"><?php echo date( 'l, j \of F \of Y' ); ?></span>
+					<?php // Show the date
+                    $dias = array(
+                       'Sunday'    =>  'Domingo',
+                       'Monday'    =>  'Lunes',
+                       'Tuesday'   =>  'Martes',
+                       'Wednesday' =>  'Miércoles',
+                       'Thursday'  =>  'Jueves',
+                       'Friday'    =>  'Viernes'
+                    );
+
+                    $meses = array(
+                        'January'   => 'Enero',
+                        'February'  => 'Febrero',
+                        'March'     => 'Marzo',
+                        'April'     => 'Abril',
+                        'May'       => 'Mayo',
+                        'June'      => 'Junio',
+                        'July'      => 'Julio',
+                        'August'    => 'Agosto',
+                        'September' => 'Septiembre',
+                        'October'   => 'Octubre',
+                        'November'  => 'Noviembre)',
+                        'December'  => 'Diciembre'
+                    );
+
+                    $day = date('l');
+                    $numero_dia = date('j');
+                    $month = date('F');
+                    $year = date('Y');
+
+                    ?>
+					<span class="header-date">
+                        <?php echo "$dias[$day] $numero_dia de $meses[$month] de $year"; ?>
+                    </span>
 					
 					<?php // Show the weather ?>	
 					<div id="header-weather">
