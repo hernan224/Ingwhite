@@ -229,7 +229,7 @@ function bones_comments( $comment, $args, $depth ) {
 
 
 //Función Disqus sin plugin
-function disqus_embed($disqus_shortname) {
+/*function disqus_embed($disqus_shortname) {
     global $post;
     wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
     echo '<div id="disqus_thread"></div>
@@ -239,7 +239,7 @@ function disqus_embed($disqus_shortname) {
         var disqus_url = "'.get_permalink($post->ID).'";
         var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
     </script>';
-}
+}*/
 
 
 /*

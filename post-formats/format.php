@@ -91,6 +91,6 @@
 
                 <?php //comments_template(); ?>
 
-                <?php disqus_embed('ingwhitetest'); ?>
+                <?php //disqus_embed('ingwhitetest'); ?>
 
               </article> <?php // end article ?>
