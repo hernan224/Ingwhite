@@ -89,7 +89,7 @@
 
                 </footer> <?php // end article footer ?>
 
-                <?php //comments_template(); ?>
+                <?php comments_template(); ?>
 
                 <?php //disqus_embed('ingwhitetest'); ?>
 
