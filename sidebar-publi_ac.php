@@ -1,7 +1,7 @@
 
 <?php if ( is_active_sidebar( 'publi_ac' ) ) : ?>
 
-    <div class="row">
+    <div class="row hidden-xs">
         <div class="col-xs-12">
             <div id="publi--ac">
 

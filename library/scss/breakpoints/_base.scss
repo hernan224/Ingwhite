@@ -111,8 +111,9 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: 700;
     font-family: 'Montserrat', sans-serif;
+    color: $azul;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -125,30 +126,30 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 3.33333rem;
+	font-size: 2.75rem;
 	line-height: 1.333em;
     margin-bottom: 0.495rem;
 }
 
 h2, .h2 {
-    font-size: 2.6667rem;
+    font-size: 2rem;
 	line-height: 1.4em;
     margin-bottom: 0.61875rem;
 }
 
 h3, .h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.825rem;
 }
 
 h4, .h4 {
     font-size: 1.3333333333333333rem;
 	font-weight: 700;
-    margin-bottom: 1.2375rem;
+    margin-bottom: 1.16667rem;
 }
 
 h5, .h5 {
-    font-size: 1.16667rem;
+    font-size: 1.125rem;
 	//line-height: 2.09em;
 	//text-transform: uppercase;
 	//letter-spacing: 2px;
@@ -163,8 +164,11 @@ HEADER STYLES
   background: $turquesa;
   color: $white;
   font-size: 12px;
+  font-size: 0.857rem;
   height: 36px;
+  height: 3rem;
   line-height: 36px;
+  line-height: 3rem;
   text-transform: uppercase;
 }
 
@@ -274,7 +278,8 @@ POSTS & CONTENT STYLES
 //** Masonry **//
 
 .item--masonry{
-  width: 100%
+  width: 100%;
+  border-top: 1px solid $border-color;
 }
 
 .sizer{
@@ -295,19 +300,19 @@ POSTS & CONTENT STYLES
 
 
 		.hentry {
-			background-color: $white;
-			border-radius: 3px;
+			//background-color: $white;
+			//border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+			//border-top: 1px solid $border-color;
 
 			header {
-				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
+				//border-bottom: 1px solid $light-gray;
+				padding: 0.5rem 1rem;
 			}
 
 			footer {
-				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				padding: 1.5rem 1rem;
+				//border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
@@ -319,7 +324,7 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
-			margin: 0;
+			//margin: 0;
 		}
 
 		.single-title {}
@@ -343,15 +348,31 @@ POSTS & CONTENT STYLES
 		/* post meta */
 		.byline {
 			color: $meta-gray;
-			font-style: italic;
+			//font-style: italic;
+            font-weight: 700;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            overflow: hidden;
 			margin: 0;
 
 			time {}
+
+          .fecha-noticias{
+            float: right;
+          }
+
+          .categoria-noticia{
+            color: $verde-caca;
+
+            &:hover{
+              color: $verde-caca;
+            }
+          }
 		}
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0;
+			padding: 0.75rem 1rem 0;
 
 			p {
 				margin: 0 0 1.5em;
@@ -526,6 +547,42 @@ POSTS & CONTENT STYLES
 	.tags {
 		margin: 0;
 	}
+
+
+
+//***** Noticias Destacadas
+
+.destacada--principal{
+  margin: 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid $verde-caca;
+
+  p:not(.byline){
+    font-size: 1.125em;
+  }
+}
+
+//****** Noticias por categoría Home
+
+.home--noticias_categoria{
+  border-top: 2px solid $verde-caca;
+  margin: 1rem auto;
+
+  .cabecera--seccion_categoria{
+
+    h2{
+      margin: 0.75rem 1rem 1.5rem;
+
+      a{
+        color: $azul;
+      }
+    }
+  }
+
+}
+
+
+
 
 /******************************************************************
 PAGE NAVI STYLES

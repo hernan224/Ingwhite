@@ -204,6 +204,7 @@ body#tinymce.wp-editor {
   Need help w/ choosing your colors? Try this site out:
   http://0to255.com/
   *********************/
+  /* EPIC VARIABLE NAME */
   /**********************************/
   /*
   Here's a great tutorial on how to
@@ -351,7 +352,7 @@ body#tinymce.wp-editor {
   font-family: "PT Sans", sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #777777;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -434,6 +435,7 @@ body#tinymce.wp-editor .em {
 }
 body#tinymce.wp-editor hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -441,6 +443,7 @@ body#tinymce.wp-editor p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
 }
 body#tinymce.wp-editor pre {
@@ -556,6 +559,8 @@ body#tinymce.wp-editor html input[disabled] {
 }
 body#tinymce.wp-editor input[type="checkbox"],
 body#tinymce.wp-editor input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -620,6 +625,7 @@ body#tinymce.wp-editor p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
@@ -631,12 +637,12 @@ body#tinymce.wp-editor p {
   font-feature-settings: "liga", "dlig";
 }
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-  color: #f01d4f;
+  color: #f04f24;
   /* on hover */
   /* on click */
 }
 body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-  color: #d10e3c;
+  color: #f3724f;
 }
 body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
@@ -675,33 +681,33 @@ body#tinymce.wp-editor p {
 }
 body#tinymce.wp-editor table {
   width: 100%;
-  border: 1px solid #eaedf2;
+  border: 1px solid #b2b2b2;
   margin-bottom: 1.5em;
 }
 body#tinymce.wp-editor table caption {
   margin: 0 0 7px;
   font-size: 0.75em;
-  color: #9fa6b4;
+  color: #777777;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 body#tinymce.wp-editor tr {
-  border-bottom: 1px solid #eaedf2;
+  border-bottom: 1px solid #b2b2b2;
 }
 body#tinymce.wp-editor tr:nth-child(even) {
   background-color: #f8f9fa;
 }
 body#tinymce.wp-editor td {
   padding: 7px;
-  border-right: 1px solid #eaedf2;
+  border-right: 1px solid #b2b2b2;
 }
 body#tinymce.wp-editor td:last-child {
   border-right: 0;
 }
 body#tinymce.wp-editor th {
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eaedf2;
-  border-right: 1px solid #eaedf2;
+  border-bottom: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;
 }
 body#tinymce.wp-editor th:last-child {
   border-right: 0;
@@ -709,9 +715,9 @@ body#tinymce.wp-editor th:last-child {
 body#tinymce.wp-editor blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #3d4a56;
   font-style: italic;
-  color: #9fa6b4;
+  color: #777777;
 }
 body#tinymce.wp-editor dd {
   margin-left: 0;

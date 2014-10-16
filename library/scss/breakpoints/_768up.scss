@@ -19,6 +19,26 @@ GENERAL STYLES
 
 body {}
 
+h1, .h1 {
+  font-size: 3rem;
+}
+
+h2, .h2 {
+  font-size: 2.25rem;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+}
+
+h4, .h4 {
+  font-size: 1.3333333333333333rem;
+}
+
+h5, .h5 {
+  font-size: 1.16667rem;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -141,7 +161,7 @@ NAVIGATION STYLES
 //** Masonry **//
 
 .item--masonry{
-  width: 48%;
+  width: 47%;
 }
 
 .sizer{
@@ -150,7 +170,7 @@ NAVIGATION STYLES
   //visibility: hidden;
 
   &.gutter--sizer{
-    width: 3%;
+    width: 6%;
 
   }
 
@@ -159,6 +179,24 @@ NAVIGATION STYLES
   }
 
 }
+
+
+//****** Noticias por categoría Home
+
+.home--noticias_categoria{
+
+  .hentry{
+    border-top: none;
+  }
+
+  .byline{
+    .categoria-noticia{
+      display: none;
+    }
+  }
+}
+
+
 
 /*********************
 SIDEBARS & ASIDES

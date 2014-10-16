@@ -122,5 +122,10 @@ jQuery(document).ready(function($) {
         transitionDuration: 0
     });
 
+    // layout Masonry again after all images have loaded
+    $contenedor.imagesLoaded( function() {
+        $contenedor.masonry();
+    });
+
 
 }); /* end of as page load scripts */
