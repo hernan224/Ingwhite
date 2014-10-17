@@ -160,7 +160,6 @@ em,
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -172,7 +171,6 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
 }
 
@@ -397,8 +395,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -567,6 +563,7 @@ img {
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   width: 100% \9;
@@ -688,7 +685,8 @@ output {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 .form-control:focus {
@@ -1371,6 +1369,7 @@ input[type="button"].btn-block {
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 .fade.in {
@@ -1397,6 +1396,7 @@ tbody.collapse.in {
   height: 0;
   overflow: hidden;
   -webkit-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
 
@@ -1438,7 +1438,6 @@ tbody.collapse.in {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 .dropdown-menu.pull-right {
@@ -2070,7 +2069,6 @@ tbody.collapse.in {
   padding-right: 15px;
   padding-left: 15px;
   border-top: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
@@ -2088,7 +2086,6 @@ tbody.collapse.in {
   .navbar-collapse {
     width: auto;
     border-top: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
   .navbar-collapse.collapse {
@@ -2233,7 +2230,6 @@ tbody.collapse.in {
     margin-top: 0;
     background-color: transparent;
     border: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
   .navbar-nav .open .dropdown-menu > li > a,
@@ -2821,6 +2817,7 @@ a.badge:hover, a.badge:focus {
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .thumbnail > img,
@@ -2964,20 +2961,22 @@ a.thumbnail.active {
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .progress-striped .progress-bar,
 .progress-bar-striped {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  -webkit-background-size: 40px 40px;
   background-size: 40px 40px;
 }
 
 .progress.active .progress-bar,
 .progress-bar.active {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
 
@@ -2989,7 +2988,6 @@ a.thumbnail.active {
   min-width: 30px;
   background-color: transparent;
   background-image: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -2998,6 +2996,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -3006,6 +3005,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -3014,6 +3014,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-warning {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -3022,6 +3023,7 @@ a.thumbnail.active {
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
@@ -3652,6 +3654,8 @@ button.close {
   -webkit-transform: translate3d(0, -25%, 0);
   transform: translate3d(0, -25%, 0);
   -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
@@ -3678,7 +3682,6 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   outline: 0;
 }
@@ -3884,7 +3887,6 @@ button.close {
   padding: 1px;
   text-align: left;
   background-color: white;
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -4374,7 +4376,6 @@ p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
@@ -4490,7 +4491,6 @@ probably best not to use it. I mean, were you going to anyway? */
 
 .row {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4556,7 +4556,6 @@ probably best not to use it. I mean, were you going to anyway? */
 .col-xs-offset-11,
 .col-xs-offset-12 {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4816,7 +4815,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-sm-offset-11,
   .col-sm-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -5078,7 +5076,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-md-offset-11,
   .col-md-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -5338,7 +5335,6 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-lg-offset-11,
   .col-lg-offset-12 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
@@ -5641,7 +5637,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .blue-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: white;
   font-size: 0.9em;
@@ -5724,7 +5720,6 @@ textarea,
   color: #777777;
   border-radius: 3px;
   vertical-align: middle;
-  -webkit-box-shadow: none;
   box-shadow: none;
   border: 0;
   width: 100%;
@@ -6137,11 +6132,17 @@ HEADER STYLES
 }
 
 .header {
-  background-color: #323944;
+  display: block;
+  background: #545f31 url("../images/header-background.jpg") top center no-repeat;
+  margin-bottom: 64px;
+  max-height: 256px;
 }
 
 #logo {
-  margin: 0.75em 0;
+  display: block;
+  margin: 70px 0;
+  width: 320px;
+  height: 60px;
 }
 #logo a {
   color: white;
@@ -6158,7 +6159,8 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  border-bottom: 0;
+  background: #545f31;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   margin: 0;
   /* end .menu li */
   /* highlight current page */
@@ -6177,7 +6179,7 @@ and more scalable.
   display: block;
   color: white;
   text-decoration: none;
-  padding: 0.75em;
+  padding: 1em;
   /*
   remember this is for mobile ONLY, so there's no need
   to even declare hover styles here, you can do it in
@@ -6798,7 +6800,7 @@ you can add resource intensive styles.
     /* end current highlighters */
   }
   .nav ul {
-    background: #323944;
+    background: #545f31;
     margin-top: 0;
   }
   .nav li {
@@ -6818,12 +6820,10 @@ you can add resource intensive styles.
   }
   .nav li a:hover, .nav li a:focus {
     color: white;
-    text-decoration: underline;
   }
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
-    border: 1px solid #ccc;
     border-top: 0;
     position: absolute;
     visibility: hidden;
@@ -6840,11 +6840,10 @@ you can add resource intensive styles.
   }
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
-    padding-left: 10px;
+    padding-left: 1em;
     border-right: 0;
     display: block;
     width: 180px;
-    border-bottom: 1px solid #ccc;
   }
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
@@ -7059,7 +7058,6 @@ be set to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important;
   }

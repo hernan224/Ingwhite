@@ -435,7 +435,6 @@ body#tinymce.wp-editor .em {
 }
 body#tinymce.wp-editor hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -443,7 +442,6 @@ body#tinymce.wp-editor p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
 }
 body#tinymce.wp-editor pre {
@@ -559,8 +557,6 @@ body#tinymce.wp-editor html input[disabled] {
 }
 body#tinymce.wp-editor input[type="checkbox"],
 body#tinymce.wp-editor input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -625,7 +621,6 @@ body#tinymce.wp-editor p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;

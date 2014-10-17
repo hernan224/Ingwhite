@@ -98,7 +98,6 @@ p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
@@ -309,7 +308,7 @@ NAVIGATION STYLES
   /* end current highlighters */
 }
 .nav ul {
-  background: #323944;
+  background: #545f31;
   margin-top: 0;
 }
 .nav li {
@@ -329,12 +328,10 @@ NAVIGATION STYLES
 }
 .nav li a:hover, .nav li a:focus {
   color: white;
-  text-decoration: underline;
 }
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
-  border: 1px solid #ccc;
   border-top: 0;
   position: absolute;
   visibility: hidden;
@@ -351,11 +348,10 @@ NAVIGATION STYLES
 }
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
-  padding-left: 10px;
+  padding-left: 1em;
   border-right: 0;
   display: block;
   width: 180px;
-  border-bottom: 1px solid #ccc;
 }
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {

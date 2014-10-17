@@ -173,11 +173,17 @@ HEADER STYLES
 }
 
 .header {
-	background-color: $black;
+  display: block;
+	background: $verde-caca url('../images/header-background.jpg') top center no-repeat;
+	margin-bottom: 64px;
+	max-height: 256px;
 }
 
 	#logo {
-		margin: 0.75em 0;
+	  display: block;
+		margin: 70px 0;
+		width: 320px;
+		height: 60px;
 
 		a {
 			color: $white;
@@ -197,7 +203,8 @@ and more scalable.
 */
 
 .nav {
-	border-bottom: 0;
+  background: $verde-caca;
+	font-family: $sans-serif;
 	margin: 0;
 
 	li {
@@ -206,7 +213,7 @@ and more scalable.
 			display: block;
 			color: $white;
 			text-decoration: none;
-			padding: 0.75em;
+			padding: 1em;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -277,27 +284,25 @@ POSTS & CONTENT STYLES
 
 //** Masonry **//
 
-.item--masonry{
+.item--masonry {
   width: 100%;
   border-top: 1px solid $border-color;
 }
 
-.sizer{
+.sizer {
   //margin-right: 1%;
   height: 0;
   visibility: hidden;
 
-  &.gutter--sizer{
+  &.gutter--sizer {
     width: 0;
-
   }
 
-  &.masonry--sizer{
+  &.masonry--sizer {
     width: 100%;
   }
 
 }
-
 
 		.hentry {
 			//background-color: $white;
