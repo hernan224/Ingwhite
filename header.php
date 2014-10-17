@@ -71,6 +71,8 @@
                         'December'  => 'Diciembre'
                     );
 
+                    date_default_timezone_set('America/Argentina/Buenos_Aires');
+
                     $day = date('l');
                     $numero_dia = date('j');
                     $month = date('F');
