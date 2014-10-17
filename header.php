@@ -120,8 +120,8 @@
 
 					</nav>
 					
-					<?php // Widget area for search ?>
-					<?php get_sidebar( 'nav' ); ?>
+					<?php // Search form ?>
+					<?php get_search_form(); ?>
 
 				</div>
 

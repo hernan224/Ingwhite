@@ -6148,6 +6148,16 @@ HEADER STYLES
   color: white;
 }
 
+.searchform {
+  float: right;
+}
+.searchform label {
+  display: none;
+}
+.searchform input {
+  /* float: left; */
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -6160,6 +6170,7 @@ and more scalable.
 */
 .nav {
   background: #545f31;
+  float: left;
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   margin: 0;
   /* end .menu li */

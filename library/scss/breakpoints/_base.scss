@@ -190,6 +190,18 @@ HEADER STYLES
 		}
 	}
 
+.searchform {
+  float: right;
+  
+  label {
+    display: none;
+  }
+  
+  input {
+    /* float: left; */
+  }
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -204,6 +216,7 @@ and more scalable.
 
 .nav {
   background: $verde-caca;
+  float: left;
 	font-family: $sans-serif;
 	margin: 0;
 
@@ -272,7 +285,6 @@ and more scalable.
 	}  /* end current highlighters */
 
 } /* end .nav */
-
 
 /*********************
 POSTS & CONTENT STYLES
