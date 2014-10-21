@@ -121,6 +121,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 	/* removing text decoration from all headline links */
 	a {
+	  color: $azul;
 		text-decoration: none;
 	}
 }
@@ -321,14 +322,15 @@ POSTS & CONTENT STYLES
 			//border-radius: 3px;
 			margin-bottom: 1.5em;
 			//border-top: 1px solid $border-color;
+			padding: 0.5rem 0;
 
 			header {
 				//border-bottom: 1px solid $light-gray;
-				padding: 0.5rem 1rem;
+				// padding: 0.5rem 1rem;
 			}
 
 			footer {
-				padding: 1.5rem 1rem;
+				// padding: 1.5rem 1rem;
 				//border-top: 1px solid $light-gray;
 
 				p {
@@ -379,17 +381,13 @@ POSTS & CONTENT STYLES
           }
 
           .categoria-noticia{
-            color: $verde-caca;
-
-            &:hover{
-              color: $verde-caca;
-            }
+            color: $naranja;
           }
 		}
 
 		/* entry content */
 		.entry-content {
-			padding: 0.75rem 1rem 0;
+			// padding: 0.75rem 1rem 0;
 
 			p {
 				margin: 0 0 1.5em;
@@ -569,31 +567,32 @@ POSTS & CONTENT STYLES
 
 //***** Noticias Destacadas
 
-.destacada--principal{
+.destacada--principal {
   margin: 1.5rem 0;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid $verde-caca;
 
-  p:not(.byline){
+  p:not(.byline) {
     font-size: 1.125em;
   }
 }
 
 //****** Noticias por categoría Home
 
-.home--noticias_categoria{
-  border-top: 2px solid $verde-caca;
+.home--noticias_categoria {
+  border-top: 1px solid $gris;
   margin: 1rem auto;
 
-  .cabecera--seccion_categoria{
+  .cabecera--seccion_categoria {
 
-    h2{
-      margin: 0.75rem 1rem 1.5rem;
-
-      a{
-        color: $azul;
+    h2 {
+      margin: 0.75rem 0 1.5rem 0;
+      
+      a {
+        color: $naranja;
       }
     }
+    
   }
 
 }
@@ -975,9 +974,34 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	color: $gris;
 }
+
+#inner-footer {
+  border-top: 1px solid $gris;
+}
+
+.footer-logo {
+  margin-right: 4px;
+}
+
+#menu-footer {
+    background: none;
+    color: $gris;
+    float: right;
+    
+    li {
+      float: left;
+      display: inline-block;
+        
+      a {
+        color: $gris;
+        padding: 0 8px;
+      }
+        
+    }
+    
+} /* end of #menu-footer */
 
 	/*
 	if you checked out the link above:
@@ -999,4 +1023,6 @@ FOOTER STYLES
 	} /* end .footer-links */
 
 
-	.copyright {}
+	.copyright {
+	  float: left;
+	}

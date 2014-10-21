@@ -6085,6 +6085,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   /* removing text decoration from all headline links */
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  color: #3d4a56;
   text-decoration: none;
 }
 
@@ -6213,7 +6214,7 @@ POSTS & CONTENT STYLES
 
 .item--masonry {
   width: 100%;
-  border-top: 1px solid #545f31;
+  border-top: 1px solid #b2b2b2;
 }
 
 .sizer {
@@ -6229,12 +6230,7 @@ POSTS & CONTENT STYLES
 
 .hentry {
   margin-bottom: 1.5em;
-}
-.hentry header {
-  padding: 0.5rem 1rem;
-}
-.hentry footer {
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 0;
 }
 .hentry footer p {
   margin: 0;
@@ -6263,15 +6259,11 @@ POSTS & CONTENT STYLES
   float: right;
 }
 .byline .categoria-noticia {
-  color: #545f31;
-}
-.byline .categoria-noticia:hover {
-  color: #545f31;
+  color: #f04f24;
 }
 
 /* entry content */
 .entry-content {
-  padding: 0.75rem 1rem 0;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -6386,14 +6378,14 @@ POSTS & CONTENT STYLES
 }
 
 .home--noticias_categoria {
-  border-top: 2px solid #545f31;
+  border-top: 1px solid #b2b2b2;
   margin: 1rem auto;
 }
 .home--noticias_categoria .cabecera--seccion_categoria h2 {
-  margin: 0.75rem 1rem 1.5rem;
+  margin: 0.75rem 0 1.5rem 0;
 }
 .home--noticias_categoria .cabecera--seccion_categoria h2 a {
-  color: #3d4a56;
+  color: #f04f24;
 }
 
 /******************************************************************
@@ -6629,7 +6621,7 @@ SIDEBARS & ASIDES
   background-color: white;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #545f31;
+  border: 1px solid #b2b2b2;
   border-radius: 2px;
   margin-bottom: 1.5em;
 }
@@ -6639,10 +6631,32 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #323944;
-  color: #f8f9fa;
+  color: #b2b2b2;
 }
 
+#inner-footer {
+  border-top: 1px solid #b2b2b2;
+}
+
+.footer-logo {
+  margin-right: 4px;
+}
+
+#menu-footer {
+  background: none;
+  color: #b2b2b2;
+  float: right;
+}
+#menu-footer li {
+  float: left;
+  display: inline-block;
+}
+#menu-footer li a {
+  color: #b2b2b2;
+  padding: 0 8px;
+}
+
+/* end of #menu-footer */
 /*
 if you checked out the link above:
 http://www.alistapart.com/articles/organizing-mobile/
@@ -6653,6 +6667,10 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+.copyright {
+  float: left;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -6897,17 +6915,19 @@ you can add resource intensive styles.
   }
 
   .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em;
+    margin: 0.25em 0 0.75em 0;
   }
 
   .widget {
-    padding: 0 10px;
-    margin: 2.2em 0;
+    border-top: 1px solid #b2b2b2;
+    margin: 2em 0;
   }
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
+  }
+  .widget ul li a {
+    color: #b2b2b2;
   }
   .widget ul li ul {
     margin-top: 0.75em;

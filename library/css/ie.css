@@ -394,17 +394,19 @@ SIDEBARS & ASIDES
 }
 
 .widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em;
+  margin: 0.25em 0 0.75em 0;
 }
 
 .widget {
-  padding: 0 10px;
-  margin: 2.2em 0;
+  border-top: 1px solid #b2b2b2;
+  margin: 2em 0;
 }
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
+}
+.widget ul li a {
+  color: #b2b2b2;
 }
 .widget ul li ul {
   margin-top: 0.75em;
