@@ -43,7 +43,7 @@
 
 		<div id="container">
 			
-			<div id="top-header">
+			<div id="top-header" class="hidden-xs">
 				<div class="wrap cf">
 					
 					<?php // Show the date
@@ -83,10 +83,64 @@
                         <?php echo "$dias[$day] $numero_dia de $meses[$month] de $year"; ?>
                     </span>
 					
-					<?php // Show the weather ?>	
-					<div id="header-weather">
-						<?php // ?>
-					</div>
+					<?php // Show the weather
+                       /* Dirección del XML con los datos del clima*/
+                       $clima_xml = 'http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-bb.xml';
+                       /* Objeto con la información del XML*/
+                       $clima_ob = new SimpleXMLElement(file_get_contents($clima_xml));
+
+                    ?>
+					<span id="header-weather" class="pull-right">
+						<?php
+
+                        if ($clima_ob !== FALSE) {
+                            /** Preparo string para guardar el texto del clima**/
+                            $clima_str = '';
+
+                            /*if ($icono = $clima_ob->cc->icon !== ''){
+                                $clima_str .= '<img class="img-responsive" src="http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/'.$icono.'.png" border="0" title="Algo nublado"/>';
+                            };*/
+                            /* Condición */
+                            $condicion = $clima_ob->cc->condition;
+                            if ($condicion != ''){
+                                $clima_str .= '&nbsp;'.$condicion;
+                            };
+                            /* Temperatura y Sensación Térmica */
+                            $temperatura = $clima_ob->cc->temp;
+                            $st = $clima_ob->cc->st;
+                            if($temperatura !== ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong> T: </strong>&nbsp; ' . $temperatura . '°' . $clima_ob->cc->Units['temp'];
+
+                                if($st != '' && $st != $temperatura){
+                                    $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>ST:</strong> &nbsp;' . $st . ' °' . $clima_ob->cc->Units['temp'];
+                                }
+                            };
+                            /* Humedad */
+                            $humedad = $clima_ob->cc->hmid;
+                            if ($humedad != ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>H:</strong>&nbsp;' . $humedad .$clima_ob->cc->Units['hum'];
+                            }
+                            /* Presión */
+                            $presion = $clima_ob->cc->pres;// . ' °'.$clima_ob->cc->Units['pres'];
+                            if($presion != ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'  <strong>P:</strong>&nbsp;' . $presion .'&nbsp;'. $clima_ob->cc->Units['pres'];
+                            }
+                            /* Velocidad y dirección del viento*/
+                            $viento_vel = $clima_ob->cc->wind_sp;
+                            $viento_dir = $clima_ob->cc->wind_dir;
+                            if ($viento_vel != '' && $viento_dir != ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'  <strong>V:</strong>&nbsp;' . $viento_vel .'&nbsp;'. $clima_ob->cc->Units['wind'] .'&nbsp;' . $viento_dir;
+                            }
+
+                            //print_r($clima_ob);
+                            /* Muestro el clima */
+                            echo $clima_str;
+                            //echo ' ';
+                            //echo '°'.$clima_ob->cc->Units['temp'];
+                        }
+                        //else { echo 'ERROR!';}
+                        ?>
+					</span>
 						
 				</div>
 					
