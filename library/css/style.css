@@ -6094,6 +6094,13 @@ HEADER STYLES
   line-height: 3rem;
   text-transform: uppercase;
 }
+#top-header a {
+  color: #fff;
+  font-weight: 700;
+}
+#top-header a:hover {
+  text-decoration: underline;
+}
 
 .header {
   display: block;

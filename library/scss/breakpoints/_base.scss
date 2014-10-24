@@ -172,6 +172,15 @@ HEADER STYLES
   line-height: 36px;
   line-height: 3rem;
   text-transform: uppercase;
+
+  a{
+    color: #fff;
+    font-weight: 700;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 }
 
 .header {

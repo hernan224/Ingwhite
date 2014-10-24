@@ -84,16 +84,22 @@
                     </span>
 					
 					<?php // Show the weather
+                        libxml_use_internal_errors(true);
                        /* Dirección del XML con los datos del clima*/
                        $clima_xml = 'http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-bb.xml';
                        /* Objeto con la información del XML*/
-                       $clima_ob = new SimpleXMLElement(file_get_contents($clima_xml));
+                       //$clima_ob = new SimpleXMLElement(file_get_contents($clima_xml));
+                       //if ()
+                        $clima_ob = simplexml_load_string(file_get_contents($clima_xml));
 
                     ?>
 					<span id="header-weather" class="pull-right">
 						<?php
 
-                        if ($clima_ob !== FALSE) {
+                        if ($clima_ob === FALSE){
+                          echo 'No hay información meteorológica disponible. Consulte: <a class="clima-link" target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">Meteobahía</a>' ;
+                        }
+                        else{
                             /** Preparo string para guardar el texto del clima**/
                             $clima_str = '';
 

@@ -7,9 +7,9 @@
                             <p class="source-org copyright"><a class="footer-logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/footer-logo.png" alt="Ingeniero White" /></a> Todos los derechos reservados &copy; <?php echo date( 'Y' ); ?>.</p>
 
                             <p class="desarrollo">
-                                <strong>Diseño y Desarrollo: <a href="http://imotionconsulting.com.ar/">Imotion Consulting</a></strong>
+                                <strong>Diseño y Desarrollo: <a target="_blank" rel="nofollow" href="http://imotionconsulting.com.ar/">Imotion Consulting</a></strong>
                                 <br/>
-                                <small>Datos meteorológicos elaborados por: <a href="http://meteobahia.com.ar/">(C) Carlos Zotelo (CERZOS/CONICET)</a></small>
+                                <small>Datos meteorológicos elaborados por: <a target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">(C) Carlos Zotelo (CERZOS/CONICET)</a></small>
 
                             </p>
                         </div>
