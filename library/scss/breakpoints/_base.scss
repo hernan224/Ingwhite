@@ -163,9 +163,10 @@ HEADER STYLES
 
 #top-header {
   background: $turquesa;
+  //background-color: $azul;
   color: $white;
-  font-size: 12px;
-  font-size: 0.857rem;
+  //font-size: 12px;
+  font-size: 0.857em;
   height: 36px;
   height: 3rem;
   line-height: 36px;
@@ -174,34 +175,121 @@ HEADER STYLES
 }
 
 .header {
-  display: block;
-	background: $verde-caca url('../images/header-background.jpg') top center no-repeat;
+    display: block;
+	//background: $verde-caca url('../images/header-background.jpg') top center no-repeat;
+    background-color: $azul;
+    //background-color: $turquesa;
+    padding: 3rem 0 0;
 	margin-bottom: 64px;
 	max-height: 256px;
+
+
+  #logo {
+    color: #fff;
+    @include hide-text();
+    //text-indent: -999em;
+    display: inline-block;
+    background: transparent url('../images/header-logo.png') no-repeat center center;
+    background-size: contain;
+    //margin: 70px 0;
+    width: 100%;
+    height: 60px;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    //max-height: 60px;
+
+
+  }
+
+  //SEARCHFORM
+
+  .search-form{
+    width: 100%;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+
+    .search-field{
+      right: 1.5rem;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      padding-right: 50px;
+
+      &:focus,
+      &:active {
+        left: 0;
+        right: 1.5rem;
+        width: 100%;
+      }
+    }
+
+    .search-submit{
+
+      @include hide-text();
+      //background-color: rgba($naranja, 0.4) ;
+      z-index: 15;
+    }
+
+    &:after{
+      content: "\f002";
+      font-size: 1.5rem;
+      line-height: 40px;
+      color: $naranja;
+      display: inline-block;
+      //width: 3rem;
+      //height: 3rem
+      //display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      //line-height: 1;
+      font-size-adjust: none;
+      font-stretch: normal;
+      -moz-font-feature-settings: normal;
+      -moz-font-language-override: normal;
+      //font-size: inherit;
+      text-rendering: auto;
+      //font-size: 1.33333rem;
+      //line-height: 0.75rem;
+      //vertical-align: -15%;
+      z-index: 10;
+      text-align: center;
+    }
+
+    &:after,
+    .search-submit{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      //transform: translate(0, 50%);
+      width: 50px;
+      height: 40px;
+    }
+  }
 }
 
-	#logo {
-	  display: block;
-		margin: 70px 0;
-		width: 320px;
-		height: 60px;
 
-		a {
-			color: $white;
-		}
-	}
 
-.searchform {
-  float: right;
-  
-  label {
-    display: none;
-  }
-  
-  input {
-    /* float: left; */
-  }
+//.searchform {
+//  float: right;
+//
+//  label {
+//    display: none;
+//  }
+//
+//  input {
+//    /* float: left; */
+//  }
+//}
+
+
+.screen-reader-text{
+  @extend .sr-only;
 }
+
 
 /*********************
 NAVIGATION STYLES
@@ -215,10 +303,15 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+#nav-principal{
+  background-color: $naranja;
+  margin-top: 3rem;
+}
+
 .nav {
-  background: $verde-caca;
-  float: left;
-	font-family: $sans-serif;
+  //background: $verde-caca;
+  //float: left;
+	//font-family: $sans-serif;
 	margin: 0;
 
 	li {
@@ -228,6 +321,7 @@ and more scalable.
 			color: $white;
 			text-decoration: none;
 			padding: 1em;
+            background-clip: $link-hover;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -285,7 +379,40 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-} /* end .nav */
+}
+
+.social-btns{
+  text-align: right;
+
+  .btn-social{
+    color: lighten($link-hover, 15%);
+    padding: 1rem;
+    display: inline-block;
+    margin: 0;
+    transition: all 0.2s ease;
+
+    &:hover{
+      color: #fff;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+.tinynav{
+  display: block;
+  margin: 0.35rem 0px;
+  font-size: 1.12em;
+  color: $naranja;
+
+  option{
+    padding: 0.5rem 0;
+  }
+}
+#menu-menu-principal{
+  display: none;
+}
+
+/* end .nav */
 
 /*********************
 POSTS & CONTENT STYLES
@@ -934,11 +1061,19 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-left: 0;
+}
 
 	.widgettitle {}
 
 	.widget {
+      min-width: 100%;
+      margin: 1rem 0;
+
 
 		ul {
 
@@ -983,6 +1118,29 @@ FOOTER STYLES
 
 .footer-logo {
   margin-right: 4px;
+}
+
+.footer-btns{
+  text-align: left;
+  margin-bottom: 1.5rem;
+
+  h5{
+    margin:1rem 0 0;
+    color: #777;
+
+  }
+
+  .btn-social{
+    &:hover{
+      color: $naranja;
+    }
+
+    &:first-of-type{
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
 }
 
 #menu-footer {

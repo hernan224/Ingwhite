@@ -582,7 +582,7 @@ hr {
   border-top: 1px solid #eeeeee;
 }
 
-.sr-only {
+.sr-only, .screen-reader-text {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1022,7 +1022,7 @@ select[multiple].input-lg,
   color: #a94442;
 }
 
-.has-feedback label.sr-only ~ .form-control-feedback {
+.has-feedback label.sr-only ~ .form-control-feedback, .has-feedback label.screen-reader-text ~ .form-control-feedback {
   top: 0;
 }
 
@@ -5718,51 +5718,15 @@ textarea,
   margin-bottom: 14px;
   font-size: 1em;
   color: #777777;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
   border: 0;
   width: 100%;
   max-width: 400px;
   font-family: "PT Sans", sans-serif;
-  background-color: #b2b2b2;
-  -webkit-transition: background-color 0.24s ease-in-out;
-  transition: background-color 0.24s ease-in-out;
-}
-input[type="text"]:focus, input[type="text"]:active,
-input[type="password"]:focus,
-input[type="password"]:active,
-input[type="datetime"]:focus,
-input[type="datetime"]:active,
-input[type="datetime-local"]:focus,
-input[type="datetime-local"]:active,
-input[type="date"]:focus,
-input[type="date"]:active,
-input[type="month"]:focus,
-input[type="month"]:active,
-input[type="time"]:focus,
-input[type="time"]:active,
-input[type="week"]:focus,
-input[type="week"]:active,
-input[type="number"]:focus,
-input[type="number"]:active,
-input[type="email"]:focus,
-input[type="email"]:active,
-input[type="url"]:focus,
-input[type="url"]:active,
-input[type="search"]:focus,
-input[type="search"]:active,
-input[type="tel"]:focus,
-input[type="tel"]:active,
-input[type="color"]:focus,
-input[type="color"]:active,
-select:focus,
-select:active,
-textarea:focus,
-textarea:active,
-.field:focus,
-.field:active {
-  background-color: #bcbcbc;
+  background-color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 input[type="text"].error, input[type="text"].is-invalid,
 input[type="password"].error,
@@ -6123,8 +6087,7 @@ HEADER STYLES
 #top-header {
   background: #32878e;
   color: white;
-  font-size: 12px;
-  font-size: 0.857rem;
+  font-size: 0.857em;
   height: 36px;
   height: 3rem;
   line-height: 36px;
@@ -6134,29 +6097,78 @@ HEADER STYLES
 
 .header {
   display: block;
-  background: #545f31 url("../images/header-background.jpg") top center no-repeat;
+  background-color: #3d4a56;
+  padding: 3rem 0 0;
   margin-bottom: 64px;
   max-height: 256px;
 }
-
-#logo {
-  display: block;
-  margin: 70px 0;
-  width: 320px;
+.header #logo {
+  color: #fff;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  display: inline-block;
+  background: transparent url("../images/header-logo.png") no-repeat center center;
+  background-size: contain;
+  width: 100%;
   height: 60px;
+  max-width: 320px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
 }
-#logo a {
-  color: white;
+.header .search-form {
+  width: 100%;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto 1.5rem;
 }
-
-.searchform {
-  float: right;
+.header .search-form .search-field {
+  right: 1.5rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding-right: 50px;
 }
-.searchform label {
-  display: none;
+.header .search-form .search-field:focus, .header .search-form .search-field:active {
+  left: 0;
+  right: 1.5rem;
+  width: 100%;
 }
-.searchform input {
-  /* float: left; */
+.header .search-form .search-submit {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  z-index: 15;
+}
+.header .search-form:after {
+  content: "\f002";
+  font-size: 1.5rem;
+  line-height: 40px;
+  color: #f04f24;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  text-rendering: auto;
+  z-index: 10;
+  text-align: center;
+}
+.header .search-form:after,
+.header .search-form .search-submit {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  height: 40px;
 }
 
 /*********************
@@ -6169,10 +6181,12 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+#nav-principal {
+  background-color: #f04f24;
+  margin-top: 3rem;
+}
+
 .nav {
-  background: #545f31;
-  float: left;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
   margin: 0;
   /* end .menu li */
   /* highlight current page */
@@ -6192,6 +6206,7 @@ and more scalable.
   color: white;
   text-decoration: none;
   padding: 1em;
+  background-clip: #f3724f;
   /*
   remember this is for mobile ONLY, so there's no need
   to even declare hover styles here, you can do it in
@@ -6202,6 +6217,35 @@ and more scalable.
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 30px;
+}
+
+.social-btns {
+  text-align: right;
+}
+.social-btns .btn-social {
+  color: #f8ab97;
+  padding: 1rem;
+  display: inline-block;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+.social-btns .btn-social:hover {
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.tinynav {
+  display: block;
+  margin: 0.35rem 0px;
+  font-size: 1.12em;
+  color: #f04f24;
+}
+.tinynav option {
+  padding: 0.5rem 0;
+}
+
+#menu-menu-principal {
+  display: none;
 }
 
 /* end .nav */
@@ -6613,6 +6657,17 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+.sidebar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+.widget {
+  min-width: 100%;
+  margin: 1rem 0;
+}
 .widget ul li {
   /* deep nesting */
 }
@@ -6640,6 +6695,22 @@ FOOTER STYLES
 
 .footer-logo {
   margin-right: 4px;
+}
+
+.footer-btns {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.footer-btns h5 {
+  margin: 1rem 0 0;
+  color: #777;
+}
+.footer-btns .btn-social:hover {
+  color: #f04f24;
+}
+.footer-btns .btn-social:first-of-type {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 #menu-footer {
@@ -6758,6 +6829,14 @@ tweeners.
 
   /* end .entry-content */
   /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .widget {
+    min-width: 45%;
+    margin: 1rem 2%;
+  }
+
+  /*********************
   FOOTER STYLES
   *********************/
   /*
@@ -6819,6 +6898,22 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
+  .header {
+    padding-top: 4.5rem;
+  }
+  .header #logo {
+    margin: 0;
+    padding: 0;
+  }
+  .header .search-form {
+    margin: 0;
+    max-width: 100%;
+  }
+  .header .search-form .search-field {
+    left: 25%;
+    width: 75%;
+  }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -6829,7 +6924,7 @@ you can add resource intensive styles.
     /* end current highlighters */
   }
   .nav ul {
-    background: #545f31;
+    background: #f04f24;
     margin-top: 0;
   }
   .nav li {
@@ -6842,6 +6937,7 @@ you can add resource intensive styles.
   }
   .nav li a {
     border-bottom: 0;
+    transition: background 0.2s ease;
     /*
     you can use hover styles here even though this size
     has the possibility of being a mobile device.
@@ -6849,6 +6945,8 @@ you can add resource intensive styles.
   }
   .nav li a:hover, .nav li a:focus {
     color: white;
+    background-color: #f3724f;
+    transition: background 0.2s ease;
   }
   .nav li ul.sub-menu,
   .nav li ul.children {
@@ -6857,6 +6955,7 @@ you can add resource intensive styles.
     position: absolute;
     visibility: hidden;
     z-index: 8999;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     /* highlight sub-menu current page */
   }
   .nav li ul.sub-menu li,
@@ -6873,6 +6972,7 @@ you can add resource intensive styles.
     border-right: 0;
     display: block;
     width: 180px;
+    border-bottom: 1px solid #f3724f;
   }
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
@@ -6886,6 +6986,18 @@ you can add resource intensive styles.
   .nav li:hover > ul {
     top: auto;
     visibility: visible;
+  }
+
+  .social-btns .btn-social {
+    margin: 0 0.5rem;
+  }
+
+  .tinynav {
+    display: none;
+  }
+
+  #menu-menu-principal {
+    display: inline-block;
   }
 
   /* end .nav */
@@ -6903,24 +7015,20 @@ you can add resource intensive styles.
   .home--noticias_categoria .hentry {
     border-top: none;
   }
-  .home--noticias_categoria .byline .categoria-noticia {
+  .home--noticias_categoria .byline {
     display: none;
   }
 
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  .sidebar {
-    margin-top: 2.2em;
-  }
-
   .widgettitle {
     margin: 0.25em 0 0.75em 0;
   }
 
   .widget {
     border-top: 1px solid #b2b2b2;
-    margin: 2em 0;
+    min-width: 26%;
   }
   .widget ul li {
     margin-bottom: 0.75em;
@@ -6953,15 +7061,6 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */
-  }
-
-  /* end .footer-links */
 }
 /*********************
 DESKTOP
@@ -6982,6 +7081,20 @@ you can add resource intensive styles.
   ******************************************************************/
   .wrap {
     width: 960px;
+  }
+
+  .sidebar {
+    margin-top: 2.2em;
+    padding-left: 2rem;
+    display: block;
+  }
+
+  .widget {
+    margin: 2em 0;
+  }
+
+  .footer-btns {
+    margin-top: 2.5rem;
   }
 }
 /*********************

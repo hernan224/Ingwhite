@@ -245,6 +245,14 @@ POSTS & CONTENT STYLES
 
 /* end .entry-content */
 /*********************
+SIDEBARS & ASIDES
+*********************/
+.widget {
+  min-width: 45%;
+  margin: 1rem 2%;
+}
+
+/*********************
 FOOTER STYLES
 *********************/
 /*
@@ -298,6 +306,22 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  padding-top: 4.5rem;
+}
+.header #logo {
+  margin: 0;
+  padding: 0;
+}
+.header .search-form {
+  margin: 0;
+  max-width: 100%;
+}
+.header .search-form .search-field {
+  left: 25%;
+  width: 75%;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -308,7 +332,7 @@ NAVIGATION STYLES
   /* end current highlighters */
 }
 .nav ul {
-  background: #545f31;
+  background: #f04f24;
   margin-top: 0;
 }
 .nav li {
@@ -321,6 +345,7 @@ NAVIGATION STYLES
 }
 .nav li a {
   border-bottom: 0;
+  transition: background 0.2s ease;
   /*
   you can use hover styles here even though this size
   has the possibility of being a mobile device.
@@ -328,6 +353,8 @@ NAVIGATION STYLES
 }
 .nav li a:hover, .nav li a:focus {
   color: white;
+  background-color: #f3724f;
+  transition: background 0.2s ease;
 }
 .nav li ul.sub-menu,
 .nav li ul.children {
@@ -336,6 +363,7 @@ NAVIGATION STYLES
   position: absolute;
   visibility: hidden;
   z-index: 8999;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   /* highlight sub-menu current page */
 }
 .nav li ul.sub-menu li,
@@ -352,6 +380,7 @@ NAVIGATION STYLES
   border-right: 0;
   display: block;
   width: 180px;
+  border-bottom: 1px solid #f3724f;
 }
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
@@ -365,6 +394,18 @@ NAVIGATION STYLES
 .nav li:hover > ul {
   top: auto;
   visibility: visible;
+}
+
+.social-btns .btn-social {
+  margin: 0 0.5rem;
+}
+
+.tinynav {
+  display: none;
+}
+
+#menu-menu-principal {
+  display: inline-block;
 }
 
 /* end .nav */
@@ -382,24 +423,20 @@ NAVIGATION STYLES
 .home--noticias_categoria .hentry {
   border-top: none;
 }
-.home--noticias_categoria .byline .categoria-noticia {
+.home--noticias_categoria .byline {
   display: none;
 }
 
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar {
-  margin-top: 2.2em;
-}
-
 .widgettitle {
   margin: 0.25em 0 0.75em 0;
 }
 
 .widget {
   border-top: 1px solid #b2b2b2;
-  margin: 2em 0;
+  min-width: 26%;
 }
 .widget ul li {
   margin-bottom: 0.75em;
@@ -432,15 +469,6 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-.footer-links ul li {
-  /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */
-}
-
-/* end .footer-links */
 /******************************************************************
 Site Name:
 Author:
@@ -453,6 +481,20 @@ be seen on the Desktop.
 ******************************************************************/
 .wrap {
   width: 960px;
+}
+
+.sidebar {
+  margin-top: 2.2em;
+  padding-left: 2rem;
+  display: block;
+}
+
+.widget {
+  margin: 2em 0;
+}
+
+.footer-btns {
+  margin-top: 2.5rem;
 }
 
 /*

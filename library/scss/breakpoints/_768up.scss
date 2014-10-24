@@ -51,9 +51,29 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
 
-	#logo {}
+  padding-top: 4.5rem;
+
+  #logo {
+    margin: 0;
+    padding: 0;
+  }
+
+  .search-form{
+    margin: 0;
+    max-width: 100%;
+
+    .search-field{
+      left: 25%;
+      width: 75%;
+    }
+  }
+}
+
+
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -62,7 +82,7 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		background: $verde-caca;
+		background: $naranja;
 		margin-top:0;
 	}
 	li {
@@ -71,6 +91,7 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
+            transition: background 0.2s ease;
 
 			/*
 			you can use hover styles here even though this size
@@ -78,6 +99,8 @@ NAVIGATION STYLES
 			*/
 			&:hover, &:focus {
 				color: $white;
+                background-color: $link-hover;
+                transition: background 0.2s ease;
 			}
 		}
 
@@ -95,6 +118,7 @@ NAVIGATION STYLES
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
+            box-shadow: 1px 2px 4px rgba(#000, 0.25);
 
 			li {
 
@@ -103,7 +127,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					width: 180px;
-					// border-bottom: 1px solid #ccc;
+                    border-bottom: 1px solid $link-hover;
 
 					&:hover,
 					&:focus {}
@@ -154,7 +178,21 @@ NAVIGATION STYLES
 		a {}
 	}  /* end current highlighters */
 
-} /* end .nav */
+}
+
+.social-btns{
+  .btn-social{
+    margin: 0 0.5rem;
+  }
+}
+
+.tinynav{
+  display: none;
+}
+#menu-menu-principal{
+  display: inline-block;
+}
+/* end .nav */
 
 
 //** Masonry **//
@@ -189,9 +227,7 @@ NAVIGATION STYLES
   }
 
   .byline{
-    .categoria-noticia{
       display: none;
-    }
   }
 }
 
@@ -200,7 +236,9 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	//margin-top: 2.2em;
+    //padding-left: 2rem;
+    //display: block;
 }
 
 	.widgettitle {
@@ -209,7 +247,8 @@ SIDEBARS & ASIDES
 
 	.widget {
 	  border-top: 1px solid $gris;
-		margin: 2em 0;
+      //margin: 2em 0;
+      min-width: 26%;
 
 		ul {
 			li {
@@ -328,19 +367,21 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-.footer-links {
-	ul {
-		li {
-			a {
-				&:hover {}
-			}
-			/*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
-			ul {}
-		}
-	}
-} /* end .footer-links */
+//.footer-links {
+//	ul {
+//		li {
+//			a {
+//				&:hover {}
+//			}
+//			/*
+//			be careful with the depth of your menus.
+//			it's very rare to have multi-depth menus in
+//			the footer.
+//			*/
+//			ul {}
+//		}
+//	}
+//} /* end .footer-links */
+
+
 

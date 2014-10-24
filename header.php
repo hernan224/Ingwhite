@@ -43,7 +43,7 @@
 
 		<div id="container">
 			
-			<div id="top-header">
+			<div id="top-header" class="hidden-xs">
 				<div class="wrap cf">
 					
 					<?php // Show the date
@@ -83,10 +83,64 @@
                         <?php echo "$dias[$day] $numero_dia de $meses[$month] de $year"; ?>
                     </span>
 					
-					<?php // Show the weather ?>	
-					<div id="header-weather">
-						<?php // ?>
-					</div>
+					<?php // Show the weather
+                       /* Dirección del XML con los datos del clima*/
+                       $clima_xml = 'http://meteorologia.cerzos-conicet.gob.ar/mobile/xml/now-bb.xml';
+                       /* Objeto con la información del XML*/
+                       $clima_ob = new SimpleXMLElement(file_get_contents($clima_xml));
+
+                    ?>
+					<span id="header-weather" class="pull-right">
+						<?php
+
+                        if ($clima_ob !== FALSE) {
+                            /** Preparo string para guardar el texto del clima**/
+                            $clima_str = '';
+
+                            /*if ($icono = $clima_ob->cc->icon !== ''){
+                                $clima_str .= '<img class="img-responsive" src="http://www.meteorologia.cerzos-conicet.gov.ar/mobile/iconos/'.$icono.'.png" border="0" title="Algo nublado"/>';
+                            };*/
+                            /* Condición */
+                            $condicion = $clima_ob->cc->condition;
+                            if ($condicion != ''){
+                                $clima_str .= '&nbsp;'.$condicion;
+                            };
+                            /* Temperatura y Sensación Térmica */
+                            $temperatura = $clima_ob->cc->temp;
+                            $st = $clima_ob->cc->st;
+                            if($temperatura !== ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong> T: </strong>&nbsp; ' . $temperatura . '°' . $clima_ob->cc->Units['temp'];
+
+                                if($st != '' && !($st === $temperatura)){
+                                    $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>ST:</strong> &nbsp;' . $st . '°' . $clima_ob->cc->Units['temp'] . '</span>';
+                                }
+                            };
+                            /* Humedad */
+                            $humedad = $clima_ob->cc->hmid;
+                            if ($humedad != ''){
+                                $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>H:</strong>&nbsp;' . $humedad .$clima_ob->cc->Units['hum'] . '</span>';
+                            }
+                            /* Presión */
+                            $presion = $clima_ob->cc->pres;// . ' °'.$clima_ob->cc->Units['pres'];
+                            if($presion != ''){
+                                $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>P:</strong>&nbsp;' . $presion .'&nbsp;'. $clima_ob->cc->Units['pres'] . '</span>';
+                            }
+                            /* Velocidad y dirección del viento*/
+                            $viento_vel = $clima_ob->cc->wind_sp;
+                            $viento_dir = $clima_ob->cc->wind_dir;
+                            if ($viento_vel != '' && $viento_dir != ''){
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'  <strong>V:</strong>&nbsp;' . $viento_vel .'&nbsp;'. $clima_ob->cc->Units['wind'] .'&nbsp;' . $viento_dir;
+                            }
+
+                            //print_r($clima_ob);
+                            /* Muestro el clima */
+                            echo $clima_str;
+                            //echo ' ';
+                            //echo '°'.$clima_ob->cc->Units['temp'];
+                        }
+                        //else { echo 'ERROR!';}
+                        ?>
+					</span>
 						
 				</div>
 					
@@ -96,33 +150,56 @@
 
 				<div id="inner-header" class="wrap cf">
 
+                    <div class="row around-sm">
+                        <div class="col-xs-12 col-sm-8">
+                            <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">Ingenierowhite.com</a>
+                        </div>
+                        <!--//Logo-->
+                        <div class="col-xs-12 col-sm-4">
+                            <?php // Search form ?>
+                            <?php get_search_form(); ?>
+                        </div>
+                        <!--//Buscador-->
+                    </div>
+
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/header-logo.png" alt="Ingeniero White" /></a>
+
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
-						<?php wp_nav_menu(array(
-    					'container' => false,                           // remove nav container
-    					'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					'theme_location' => 'main-nav',                 // where it's located in the theme
-    					'before' => '',                                 // before the menu
-        				'after' => '',                                  // after the menu
-        				'link_before' => '',                            // before each link
-        				'link_after' => '',                             // after each link
-        				'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
-					
-					<?php // Search form ?>
-					<?php get_search_form(); ?>
-
 				</div>
+
+                <nav id="nav-principal" class="cf" role="navigation">
+
+                    <div class="wrap cf">
+                        <div class="row between-xs">
+                            <div class="col-xs-8 col-sm-9 col-md-10">
+                                <?php wp_nav_menu(array(
+                                    'container' => false,                           // remove nav container
+                                    'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+                                    'menu' => __('The Main Menu', 'bonestheme'),  // nav name
+                                    'menu_class' => 'nav top-nav cf',               // adding custom nav class
+                                    'theme_location' => 'main-nav',                 // where it's located in the theme
+                                    'before' => '',                                 // before the menu
+                                    'after' => '',                                  // after the menu
+                                    'link_before' => '',                            // before each link
+                                    'link_after' => '',                             // after each link
+                                    'depth' => 0,                                   // limit the depth of the nav
+                                    'fallback_cb' => ''                             // fallback function (if there is one)
+                                )); ?>
+
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2">
+                                <div class="social-btns">
+                                    <a class="btn-social" href="#"><i class="fa fa-lg fa-facebook"></i></a>
+                                    <a class="btn-social" href="#"><i class="fa fa-lg fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </nav>
 
 			</header>

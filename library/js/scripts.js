@@ -128,4 +128,11 @@ jQuery(document).ready(function($) {
     });
 
 
+    jQuery('#menu-menu-principal').tinyNav({
+        active: 'current_page_item',
+        header: 'Menú',
+        indent: '  -- '
+    });
+
+
 }); /* end of as page load scripts */
