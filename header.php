@@ -111,19 +111,32 @@
                             if($temperatura !== ''){
                                 $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong> T: </strong>&nbsp; ' . $temperatura . '°' . $clima_ob->cc->Units['temp'];
 
+<<<<<<< HEAD
                                 if($st != '' && !($st === $temperatura)){
                                     $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>ST:</strong> &nbsp;' . $st . '°' . $clima_ob->cc->Units['temp'] . '</span>';
+=======
+                                if($st != '' && $st != $temperatura){
+                                    $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>ST:</strong> &nbsp;' . $st . ' °' . $clima_ob->cc->Units['temp'];
+>>>>>>> origin/master
                                 }
                             };
                             /* Humedad */
                             $humedad = $clima_ob->cc->hmid;
                             if ($humedad != ''){
+<<<<<<< HEAD
                                 $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>H:</strong>&nbsp;' . $humedad .$clima_ob->cc->Units['hum'] . '</span>';
+=======
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>H:</strong>&nbsp;' . $humedad .$clima_ob->cc->Units['hum'];
+>>>>>>> origin/master
                             }
                             /* Presión */
                             $presion = $clima_ob->cc->pres;// . ' °'.$clima_ob->cc->Units['pres'];
                             if($presion != ''){
+<<<<<<< HEAD
                                 $clima_str .= '<span class="hidden-sm">&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'<strong>P:</strong>&nbsp;' . $presion .'&nbsp;'. $clima_ob->cc->Units['pres'] . '</span>';
+=======
+                                $clima_str .= '&nbsp;&nbsp;&#47;&nbsp;&nbsp;'.'  <strong>P:</strong>&nbsp;' . $presion .'&nbsp;'. $clima_ob->cc->Units['pres'];
+>>>>>>> origin/master
                             }
                             /* Velocidad y dirección del viento*/
                             $viento_vel = $clima_ob->cc->wind_sp;
