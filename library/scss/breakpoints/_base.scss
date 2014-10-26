@@ -1082,6 +1082,7 @@ SIDEBARS & ASIDES
 	.widget {
       min-width: 100%;
       margin: 1rem 0;
+      display: none;
 
 
 		ul {
@@ -1101,9 +1102,37 @@ SIDEBARS & ASIDES
 
 		}
 
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+
+//      &.widget_sp_image{
+//
+//      }
+
 	}
 
-	.no-widgets {
+.tribe-events-list-widget ol li{
+  margin: 0;
+  padding: 0;
+  //border-bottom: 1px solid $gris;
+
+  .entry-title{
+    margin: 0.5rem 0;
+
+    a{
+      color: $link-color;
+
+      &:hover{
+        color: $link-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.no-widgets {
 		background-color: $white;
 		padding: 1.5em;
 		text-align: center;

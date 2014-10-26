@@ -437,6 +437,7 @@ SIDEBARS & ASIDES
 .widget {
   border-top: 1px solid #b2b2b2;
   min-width: 26%;
+  display: block;
 }
 .widget ul li {
   margin-bottom: 0.75em;
@@ -448,6 +449,9 @@ SIDEBARS & ASIDES
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
+}
+.widget.widget_sp_image {
+  max-width: 340px;
 }
 
 /* links widget */
@@ -491,6 +495,9 @@ be seen on the Desktop.
 
 .widget {
   margin: 2em 0;
+}
+.widget.widget_sp_image {
+  max-width: 100%;
 }
 
 .footer-btns {

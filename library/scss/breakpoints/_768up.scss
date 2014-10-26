@@ -249,6 +249,7 @@ SIDEBARS & ASIDES
 	  border-top: 1px solid $gris;
       //margin: 2em 0;
       min-width: 26%;
+      display: block;
 
 		ul {
 			li {
@@ -267,6 +268,11 @@ SIDEBARS & ASIDES
 				}
 			}
 		}
+
+      &.widget_sp_image{
+
+        max-width: 340px
+      }
 	}
 
 

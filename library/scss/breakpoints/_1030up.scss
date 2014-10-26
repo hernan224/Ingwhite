@@ -23,8 +23,14 @@ be seen on the Desktop.
 
 .widget{
   margin: 2em 0;
+
+  &.widget_sp_image{
+    max-width: 100%;
+  }
+
 }
 
 .footer-btns{
   margin-top: 2.5rem;
 }
+

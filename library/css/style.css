@@ -6674,9 +6674,29 @@ SIDEBARS & ASIDES
 .widget {
   min-width: 100%;
   margin: 1rem 0;
+  display: none;
 }
 .widget ul li {
   /* deep nesting */
+}
+.widget img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tribe-events-list-widget ol li {
+  margin: 0;
+  padding: 0;
+}
+.tribe-events-list-widget ol li .entry-title {
+  margin: 0.5rem 0;
+}
+.tribe-events-list-widget ol li .entry-title a {
+  color: #f04f24;
+}
+.tribe-events-list-widget ol li .entry-title a:hover {
+  color: #f3724f;
+  text-decoration: none;
 }
 
 .no-widgets {
@@ -7036,6 +7056,7 @@ you can add resource intensive styles.
   .widget {
     border-top: 1px solid #b2b2b2;
     min-width: 26%;
+    display: block;
   }
   .widget ul li {
     margin-bottom: 0.75em;
@@ -7047,6 +7068,9 @@ you can add resource intensive styles.
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
+  }
+  .widget.widget_sp_image {
+    max-width: 340px;
   }
 
   /* links widget */
@@ -7098,6 +7122,9 @@ you can add resource intensive styles.
 
   .widget {
     margin: 2em 0;
+  }
+  .widget.widget_sp_image {
+    max-width: 100%;
   }
 
   .footer-btns {
