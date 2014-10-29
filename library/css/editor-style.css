@@ -204,7 +204,6 @@ body#tinymce.wp-editor {
   Need help w/ choosing your colors? Try this site out:
   http://0to255.com/
   *********************/
-  /* EPIC VARIABLE NAME */
   /**********************************/
   /*
   Here's a great tutorial on how to
@@ -632,12 +631,12 @@ body#tinymce.wp-editor p {
   font-feature-settings: "liga", "dlig";
 }
 body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-  color: #f04f24;
+  color: #e53f2b;
   /* on hover */
   /* on click */
 }
 body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-  color: #f3724f;
+  color: #ec7062;
 }
 body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);

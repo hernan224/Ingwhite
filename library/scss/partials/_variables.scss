@@ -18,8 +18,9 @@ http://0to255.com/
 *********************/
 
 $turquesa:          #32878e;
-$naranja:           #f04f24;
-$verde-caca:        #545f31; /* EPIC VARIABLE NAME */
+//$naranja:           #f04f24;
+$naranja:           #E53F2B;
+$verde-caca:        #545f31;
 $azul:              #3d4a56;
 $azul-claro:        #777777;
 $gris-oscuro:       #777777;
@@ -48,7 +49,7 @@ $bones-pink:        #f01d4f;
 $blue:              $azul;
 
 $link-color:        $naranja;
-$link-hover:        lighten($link-color, 9%);
+$link-hover:        lighten($link-color, 12%);
 
 $border-color:      $gris;
 $disabled-gray:     $gris;

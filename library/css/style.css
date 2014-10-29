@@ -4312,7 +4312,6 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/* EPIC VARIABLE NAME */
 /**********************************/
 /*
 Here's a great tutorial on how to
@@ -6017,13 +6016,13 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f04f24;
+  color: #e53f2b;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #f3724f;
+  color: #ec7062;
 }
 a:link, a:visited:link {
   /*
@@ -6085,7 +6084,7 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 #top-header {
-  background: #32878e;
+  background-color: #3d4a56;
   color: white;
   font-size: 0.857em;
   height: 36px;
@@ -6104,10 +6103,12 @@ HEADER STYLES
 
 .header {
   display: block;
-  background-color: #3d4a56;
-  padding: 3rem 0 0;
-  margin-bottom: 64px;
-  max-height: 256px;
+  padding: 1.5rem 0 0;
+  max-height: 300px;
+}
+.header.bg-0 {
+  background: #3d4a56 url("../images/bg-foto.jpg") top center no-repeat;
+  background-size: cover;
 }
 .header #logo {
   color: #fff;
@@ -6155,7 +6156,7 @@ HEADER STYLES
   content: "\f002";
   font-size: 1.5rem;
   line-height: 40px;
-  color: #f04f24;
+  color: #e53f2b;
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -6189,7 +6190,7 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 #nav-principal {
-  background-color: #f04f24;
+  background-color: #32878e;
   margin-top: 3rem;
 }
 
@@ -6210,10 +6211,9 @@ and more scalable.
 }
 .nav li a {
   display: block;
-  color: white;
+  color: #fff;
   text-decoration: none;
   padding: 1em;
-  background-clip: #f3724f;
   /*
   remember this is for mobile ONLY, so there's no need
   to even declare hover styles here, you can do it in
@@ -6230,14 +6230,14 @@ and more scalable.
   text-align: right;
 }
 .social-btns .btn-social {
-  color: #f8ab97;
+  color: #fff;
   padding: 1rem;
   display: inline-block;
   margin: 0;
   transition: all 0.2s ease;
 }
 .social-btns .btn-social:hover {
-  color: #fff;
+  color: #ec7062;
   transition: all 0.2s ease;
 }
 
@@ -6245,7 +6245,7 @@ and more scalable.
   display: block;
   margin: 0.35rem 0px;
   font-size: 1.12em;
-  color: #f04f24;
+  color: #e53f2b;
 }
 .tinynav option {
   padding: 0.5rem 0;
@@ -6310,7 +6310,7 @@ POSTS & CONTENT STYLES
   float: right;
 }
 .byline .categoria-noticia {
-  color: #f04f24;
+  color: #e53f2b;
 }
 
 /* entry content */
@@ -6436,7 +6436,7 @@ POSTS & CONTENT STYLES
   margin: 0.75rem 0 1.5rem 0;
 }
 .home--noticias_categoria .cabecera--seccion_categoria h2 a {
-  color: #f04f24;
+  color: #e53f2b;
 }
 
 /******************************************************************
@@ -6692,10 +6692,10 @@ SIDEBARS & ASIDES
   margin: 0.5rem 0;
 }
 .tribe-events-list-widget ol li .entry-title a {
-  color: #f04f24;
+  color: #e53f2b;
 }
 .tribe-events-list-widget ol li .entry-title a:hover {
-  color: #f3724f;
+  color: #ec7062;
   text-decoration: none;
 }
 
@@ -6732,8 +6732,11 @@ FOOTER STYLES
   margin: 1rem 0 0;
   color: #777;
 }
+.footer-btns .btn-social {
+  color: #e53f2b;
+}
 .footer-btns .btn-social:hover {
-  color: #f04f24;
+  color: #ec7062;
 }
 .footer-btns .btn-social:first-of-type {
   margin-left: 0;
@@ -6951,7 +6954,7 @@ you can add resource intensive styles.
     /* end current highlighters */
   }
   .nav ul {
-    background: #f04f24;
+    background: #e53f2b;
     margin-top: 0;
   }
   .nav li {
@@ -6969,11 +6972,6 @@ you can add resource intensive styles.
     you can use hover styles here even though this size
     has the possibility of being a mobile device.
     */
-  }
-  .nav li a:hover, .nav li a:focus {
-    color: white;
-    background-color: #f3724f;
-    transition: background 0.2s ease;
   }
   .nav li ul.sub-menu,
   .nav li ul.children {
@@ -6999,7 +6997,12 @@ you can add resource intensive styles.
     border-right: 0;
     display: block;
     width: 180px;
-    border-bottom: 1px solid #f3724f;
+    border-bottom: 1px solid #ec7062;
+  }
+  .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
+  .nav li ul.children li a:hover,
+  .nav li ul.children li a:focus {
+    background-color: #ec7062;
   }
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
@@ -7010,9 +7013,28 @@ you can add resource intensive styles.
     top: 0;
     left: 100%;
   }
+  .nav li ul.sub-menu li.current-menu-item a,
+  .nav li ul.sub-menu li.current_page_item a,
+  .nav li ul.sub-menu li.current_page_ancestor a,
+  .nav li ul.children li.current-menu-item a,
+  .nav li ul.children li.current_page_item a,
+  .nav li ul.children li.current_page_ancestor a {
+    background-color: #ec7062;
+  }
   .nav li:hover > ul {
     top: auto;
     visibility: visible;
+  }
+  .nav li:hover:hover a, .nav li:hover:focus a {
+    color: white;
+    background-color: #e53f2b;
+    transition: background 0.2s ease;
+  }
+  .nav li.current-menu-item a,
+  .nav li.current_page_item a,
+  .nav li.current_page_ancestor a {
+    background-color: #fff;
+    color: #e53f2b;
   }
 
   .social-btns .btn-social {

@@ -152,7 +152,17 @@
 					
 			</div>
 
-			<header class="header" role="banner">
+            <?php
+                $bg_num = rand(1, 6);
+
+                if (isset($bg_num)){
+                    $clase_header = "bg-$bg_num";
+                }else{
+                    $clase_header = 'bg-0';
+                }
+            ?>
+
+			<header class="header bg-0<?php //echo $clase_header ?>" role="banner">
 
 				<div id="inner-header" class="wrap cf">
 

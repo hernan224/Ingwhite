@@ -85,7 +85,10 @@ $id_noticias_destacadas = get_posts( $args_destacados );
                                     </p>
 
 
-                                    <?php the_excerpt(); ?>
+                                    <?php //the_excerpt();
+                                        //echo get_the_excerpt($id_post);
+                                        echo white_excerpt_by_id($id_post, 150);
+                                    ?>
 
                                 </section>
                             </article>
@@ -113,7 +116,7 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 
                             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                             $modificar_query['paged'] = $paged;
-                            $modificar_query['post_type'] = 'post';
+                            //$modificar_query['post_type'] = 'post';
                                 /** Preparando Query principal **/
                             if (isset($posts_excluidos) && (count($posts_excluidos) > 0)){
                                 $modificar_query['post__not_in'] = $posts_excluidos;

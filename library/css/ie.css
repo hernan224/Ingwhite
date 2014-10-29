@@ -34,7 +34,6 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/* EPIC VARIABLE NAME */
 /**********************************/
 /*
 Here's a great tutorial on how to
@@ -332,7 +331,7 @@ NAVIGATION STYLES
   /* end current highlighters */
 }
 .nav ul {
-  background: #f04f24;
+  background: #e53f2b;
   margin-top: 0;
 }
 .nav li {
@@ -350,11 +349,6 @@ NAVIGATION STYLES
   you can use hover styles here even though this size
   has the possibility of being a mobile device.
   */
-}
-.nav li a:hover, .nav li a:focus {
-  color: white;
-  background-color: #f3724f;
-  transition: background 0.2s ease;
 }
 .nav li ul.sub-menu,
 .nav li ul.children {
@@ -380,7 +374,12 @@ NAVIGATION STYLES
   border-right: 0;
   display: block;
   width: 180px;
-  border-bottom: 1px solid #f3724f;
+  border-bottom: 1px solid #ec7062;
+}
+.nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
+.nav li ul.children li a:hover,
+.nav li ul.children li a:focus {
+  background-color: #ec7062;
 }
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
@@ -391,9 +390,28 @@ NAVIGATION STYLES
   top: 0;
   left: 100%;
 }
+.nav li ul.sub-menu li.current-menu-item a,
+.nav li ul.sub-menu li.current_page_item a,
+.nav li ul.sub-menu li.current_page_ancestor a,
+.nav li ul.children li.current-menu-item a,
+.nav li ul.children li.current_page_item a,
+.nav li ul.children li.current_page_ancestor a {
+  background-color: #ec7062;
+}
 .nav li:hover > ul {
   top: auto;
   visibility: visible;
+}
+.nav li:hover:hover a, .nav li:hover:focus a {
+  color: white;
+  background-color: #e53f2b;
+  transition: background 0.2s ease;
+}
+.nav li.current-menu-item a,
+.nav li.current_page_item a,
+.nav li.current_page_ancestor a {
+  background-color: #fff;
+  color: #e53f2b;
 }
 
 .social-btns .btn-social {

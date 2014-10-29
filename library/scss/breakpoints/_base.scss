@@ -162,8 +162,8 @@ HEADER STYLES
 *********************/
 
 #top-header {
-  background: $turquesa;
-  //background-color: $azul;
+  //background: $turquesa;
+  background-color: $azul;
   color: $white;
   //font-size: 12px;
   font-size: 0.857em;
@@ -185,12 +185,38 @@ HEADER STYLES
 
 .header {
     display: block;
-	//background: $verde-caca url('../images/header-background.jpg') top center no-repeat;
-    background-color: $azul;
+    //background-color: $azul;
     //background-color: $turquesa;
-    padding: 3rem 0 0;
-	margin-bottom: 64px;
-	max-height: 256px;
+    padding: 1.5rem 0 0;
+	//margin-bottom: 64px;
+	max-height: 300px;
+
+
+
+  &.bg-0{
+    background: $azul url('../images/bg-foto.jpg') top center no-repeat;
+    background-size: cover;
+  }
+
+//  &.bg-1{
+//    background: red;
+//  }
+//  &.bg-2{
+//    background: blue;
+//  }
+//  &.bg-3{
+//    background: green;
+//  }
+//  &.bg-4{
+//    background: orange;
+//  }
+//  &.bg-5{
+//    background: yellow;
+//  }
+//  &.bg-6{
+//    background: #000;
+//  }
+
 
 
   #logo {
@@ -313,7 +339,8 @@ and more scalable.
 */
 
 #nav-principal{
-  background-color: $naranja;
+  //background-color: $naranja;
+  background-color: $turquesa;
   margin-top: 3rem;
 }
 
@@ -327,10 +354,10 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: #fff;
 			text-decoration: none;
 			padding: 1em;
-            background-clip: $link-hover;
+            //background-color: #fff;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -394,14 +421,14 @@ and more scalable.
   text-align: right;
 
   .btn-social{
-    color: lighten($link-hover, 15%);
+    color: #fff;
     padding: 1rem;
     display: inline-block;
     margin: 0;
     transition: all 0.2s ease;
 
     &:hover{
-      color: #fff;
+      color: $link-hover;
       transition: all 0.2s ease;
     }
   }
@@ -1169,8 +1196,9 @@ FOOTER STYLES
   }
 
   .btn-social{
+    color: $link-color;
     &:hover{
-      color: $naranja;
+      color: $link-hover;
     }
 
     &:first-of-type{

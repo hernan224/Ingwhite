@@ -4,11 +4,16 @@
 
         <p class="byline vcard">
             <?php
-            $category = get_the_category();
-            if($category[0]){
-                echo '<a class="categoria-noticia" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
-            }
-            ?>
+            $agenda_post_type = 'tribe_events';
+           if ( $agenda_post_type == get_post_type() ){
+              echo '<a class="categoria-noticia" href="'.site_url( "/agenda" ).'">Agenda</a>';
+           }else{
+                $category = get_the_category();
+                if($category[0]){
+                    echo '<a class="categoria-noticia" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+                }
+
+           }  ?>
 
             <span class="fecha-noticias"> <?php echo get_the_time('d/m/Y') ?> </span>
 
