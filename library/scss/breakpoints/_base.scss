@@ -1179,9 +1179,12 @@ FOOTER STYLES
 
 #inner-footer {
   border-top: 1px solid $gris;
+  padding-top: 10px;
 }
 
 .footer-logo {
+  float: left;
+  width: 32px;
   margin-right: 4px;
 }
 
@@ -1196,6 +1199,7 @@ FOOTER STYLES
   }
 
   .btn-social{
+    float: left;
     color: $link-color;
     &:hover{
       color: $link-hover;
@@ -1249,4 +1253,5 @@ FOOTER STYLES
 
 	.copyright {
 	  float: left;
+	  font-size: 12px;
 	}

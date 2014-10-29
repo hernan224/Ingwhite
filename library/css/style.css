@@ -6718,9 +6718,12 @@ FOOTER STYLES
 
 #inner-footer {
   border-top: 1px solid #b2b2b2;
+  padding-top: 10px;
 }
 
 .footer-logo {
+  float: left;
+  width: 32px;
   margin-right: 4px;
 }
 
@@ -6733,6 +6736,7 @@ FOOTER STYLES
   color: #777;
 }
 .footer-btns .btn-social {
+  float: left;
   color: #e53f2b;
 }
 .footer-btns .btn-social:hover {
@@ -6770,6 +6774,7 @@ view.
 /* end .footer-links */
 .copyright {
   float: left;
+  font-size: 12px;
 }
 
 /*********************
