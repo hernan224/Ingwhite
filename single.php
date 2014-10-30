@@ -4,13 +4,14 @@
 
 				<div id="inner-content" class="wrap row between-md">
 
-					<div id="main" class="col-xs-12 col-md-8" role="main">
+                    <?php if (have_posts()) : ?>
+                        <div id="main" class="col-xs-12 col-md-8" role="main">
 
                         <!--Widget para publicidad ancho de contenido-->
                         <?php get_sidebar('publi_ac'); ?>
                         <!--Fin widget publicidad ancho contenido-->
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php while (have_posts()) : the_post(); ?>
 
 							<?php
 								/*
@@ -31,22 +32,6 @@
 
 						<?php endwhile; ?>
 
-						<?php else : ?>
-
-							<article id="post-not-found" class="hentry cf">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
 					</div>
 
                     <div class="col-xs-12 col-md-4">
@@ -54,6 +39,12 @@
                         <?php get_sidebar('principal'); ?>
 
                     </div>
+
+                    <?php else :
+
+                        get_template_part('content', 'sin_noticias');
+
+                    endif; ?>
 
 				</div>
 

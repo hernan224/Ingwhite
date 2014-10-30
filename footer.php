@@ -17,13 +17,13 @@
 
                         <div class="col-md-4 col-xs-12">
                             <ul class="social-footer">
-                                <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-lg fa-envelope"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
+                                <li><a target="_blank" href="<?php bloginfo('rdf_url'); ?>"><i class="fa fa-lg fa-rss"></i></a></li>
+                                <li><a href="mailto:info@ingenierowhite.com"><i class="fa fa-lg fa-envelope"></i></a></li>
                             </ul>
                         </div>
                         

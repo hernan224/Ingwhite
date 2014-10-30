@@ -20,22 +20,29 @@ $event_id = get_the_ID();
 
 <div id="tribe-events-content" class="tribe-events-single vevent hentry">
 
-        <p class="tribe-events-back">
-            <a href="<?php echo tribe_get_events_link() ?>"> <?php _e( '&laquo; All Events', 'tribe-events-calendar' ) ?></a>
-        </p>
+        <!--<p class="tribe-events-back">
+            <a href="<?php /*echo tribe_get_events_link() */?>"> <?php /*_e( '&laquo; All Events', 'tribe-events-calendar' ) */?></a>
+        </p>-->
 
         <!-- Notices -->
         <?php tribe_events_the_notices() ?>
 
+
+
+    <div class="byline">
+
+        <a class="categoria-noticia" href="<?php echo tribe_get_events_link() ?>"> Agenda</a>
+
         <?php the_title( '<h2 class="tribe-events-single-event-title summary entry-title single-title">', '</h2>' ); ?>
 
-        <div class="tribe-events-schedule updated published tribe-clearfix byline">
-            <?php echo tribe_events_event_schedule_details( $event_id, '', '' ); ?>
-            <?php if ( tribe_get_cost() ) : ?>
+        <div class="tribe-events-schedule updated published tribe-clearfix">
+            <?php echo tribe_events_event_schedule_details($event_id, '', ''); ?>
+            <?php if (tribe_get_cost()) : ?>
                 <span class="tribe-events-divider">|</span>
-                <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+                <span class="tribe-events-cost"><?php echo tribe_get_cost(null, true) ?></span>
             <?php endif; ?>
         </div>
+    </div>
 
         <!-- Event header -->
 <!--        <div id="tribe-events-header" --><?php //tribe_events_the_header_attributes() ?>
@@ -94,20 +101,11 @@ $event_id = get_the_ID();
 			?>
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 		</div> <!-- #post-x -->
-		<?php if ( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
+		<?php //if ( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template()
+
+            comments_template();
+        ?>
 	<?php endwhile; ?>
 
-	<!-- Event footer -->
-	<div id="tribe-events-footer">
-		<!-- Navigation -->
-		<!-- Navigation -->
-		<h3 class="tribe-events-visuallyhidden"><?php _e( 'Event Navigation', 'tribe-events-calendar' ) ?></h3>
-		<ul class="tribe-events-sub-nav">
-			<li class="tribe-events-nav-previous"><?php tribe_the_prev_event_link( '<span>&laquo;</span> %title%' ) ?></li>
-			<li class="tribe-events-nav-next"><?php tribe_the_next_event_link( '%title% <span>&raquo;</span>' ) ?></li>
-		</ul>
-		<!-- .tribe-events-sub-nav -->
-	</div>
-	<!-- #tribe-events-footer -->
 
 </div><!-- #tribe-events-content -->

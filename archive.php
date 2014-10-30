@@ -69,15 +69,7 @@
 
 									<?php bones_page_navi(); ?>
 
-							<?php else : ?>
 
-                                <div class="col-xs-12">
-
-                                    <?php get_template_part( 'content', 'sin_noticias' );	?>
-
-                                </div>
-
-							<?php endif; ?>
 
 						</div>
 
@@ -86,6 +78,16 @@
                         <?php get_sidebar('principal'); ?>
 
                     </div>
+
+                    <?php else : ?>
+
+
+
+                        <?php get_template_part( 'content', 'sin_noticias' );	?>
+
+
+
+                    <?php endif; ?>
 
 				</div>
 

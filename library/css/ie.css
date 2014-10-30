@@ -313,7 +313,7 @@ HEADER STYLES
   padding: 0;
 }
 .header .search-form {
-  margin: 0;
+  margin: -3px 0 0;
   max-width: 100%;
 }
 .header .search-form .search-field {
@@ -428,10 +428,10 @@ NAVIGATION STYLES
 }
 
 .sizer.gutter--sizer {
-  width: 6%;
+  width: 4%;
 }
 .sizer.masonry--sizer {
-  width: 47%;
+  width: 48%;
 }
 
 .home--noticias_categoria .hentry {

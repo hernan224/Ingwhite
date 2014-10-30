@@ -5980,6 +5980,22 @@ style a page via class
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
+.single .byline {
+  padding: 0.75rem 0;
+}
+.single .byline .fecha-noticias {
+  float: none;
+  margin-left: 0.5rem;
+}
+.single .byline .fecha-noticias:before {
+  content: ' - ';
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.single .wp-post-image {
+  margin-bottom: 1.5rem;
+}
+
 /* single post page */
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
@@ -6286,7 +6302,7 @@ POSTS & CONTENT STYLES
 
 .hentry {
   margin-bottom: 1.5em;
-  padding: 0.5rem 0;
+  padding: 0.75rem;
 }
 .hentry header {
   margin-bottom: 1rem;
@@ -6447,7 +6463,7 @@ POSTS & CONTENT STYLES
   margin: 1rem auto;
 }
 .home--noticias_categoria .cabecera--seccion_categoria h2 {
-  margin: 0.75rem 0 1.5rem 0;
+  margin: 0.75rem 0.75rem 1.5rem;
 }
 .home--noticias_categoria .cabecera--seccion_categoria h2 a {
   color: #e53f2b;
@@ -6959,7 +6975,7 @@ you can add resource intensive styles.
     padding: 0;
   }
   .header .search-form {
-    margin: 0;
+    margin: -3px 0 0;
     max-width: 100%;
   }
   .header .search-form .search-field {
@@ -7074,10 +7090,10 @@ you can add resource intensive styles.
   }
 
   .sizer.gutter--sizer {
-    width: 6%;
+    width: 4%;
   }
   .sizer.masonry--sizer {
-    width: 47%;
+    width: 48%;
   }
 
   .home--noticias_categoria .hentry {
