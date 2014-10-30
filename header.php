@@ -169,21 +169,14 @@
                     <div class="row around-sm">
                         <div class="col-xs-12 col-sm-8">
                             <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">Ingenierowhite.com</a>
-                        </div>
-                        <!--//Logo-->
+                        </div> <!-- end of #logo -->
+                        
                         <div class="col-xs-12 col-sm-4">
-                            <?php // Search form ?>
                             <?php get_search_form(); ?>
-                        </div>
-                        <!--//Buscador-->
+                        </div> <!-- end of buscador -->
                     </div>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-
-
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-				</div>
+				</div> <!-- end of #inner-header -->
 
                 <nav id="nav-principal" class="cf" role="navigation">
 
@@ -193,7 +186,7 @@
                                 <?php wp_nav_menu(array(
                                     'container' => false,                           // remove nav container
                                     'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-                                    'menu' => __('The Main Menu', 'bonestheme'),  // nav name
+                                    'menu' => __('The Main Menu', 'bonestheme'),    // nav name
                                     'menu_class' => 'nav top-nav cf',               // adding custom nav class
                                     'theme_location' => 'main-nav',                 // where it's located in the theme
                                     'before' => '',                                 // before the menu
@@ -205,11 +198,11 @@
                                 )); ?>
 
                             </div>
-                            <div class="col-xs-4 col-sm-3 col-md-2">
-                                <div class="social-btns">
-                                    <a class="btn-social" href="#"><i class="fa fa-lg fa-facebook"></i></a>
-                                    <a class="btn-social" href="#"><i class="fa fa-lg fa-twitter"></i></a>
-                                </div>
+                            <div class="col-xs-4 col-sm-3 col-md-2 last-col">
+                                <ul class="header-social">
+                                    <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                                </ul>
                             </div>
                         </div>
 

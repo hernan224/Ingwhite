@@ -52,9 +52,7 @@ HEADER STYLES
 *********************/
 
 .header {
-
-  padding-top: 4.5rem;
-  //padding-bottom: 3rem;
+  padding-top: 4rem;
 
   #logo {
     margin: 0;
@@ -82,6 +80,7 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
+	
 	ul {
 		background: $naranja;
 		margin-top:0;
@@ -196,12 +195,6 @@ NAVIGATION STYLES
 
 }
 
-.social-btns{
-  .btn-social{
-    margin: 0 0.5rem;
-  }
-}
-
 .tinynav{
   display: none;
 }
@@ -269,7 +262,7 @@ SIDEBARS & ASIDES
 
 		ul {
 			li {
-				margin-bottom: 0.75em;
+				margin-bottom: 0.25em;
 
 				&:first-child {}
 				&:last-child {}

@@ -4,27 +4,30 @@
 
                     <div class="row between-sm">
                     	
-                        <div class="col-md-5 col-xs-12">
+                        <div class="source-org">
+                        	
                         	<a class="footer-logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/footer-logo.png" alt="Ingeniero White" /></a>
-                            <p class="source-org copyright">Todos los derechos reservados &copy; <?php echo date( 'Y' ); ?>. Por <a target="_blank" rel="nofollow" href="http://imotionconsulting.com.ar/">Imotion Consulting</a><br />
-                            	Datos meteorológicos elaborados por: <a target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">(C) Carlos Zotelo (CERZOS/CONICET)</a>
+                            <p class="copyright">
+                            	Todos los derechos reservados &copy; <?php echo date( 'Y' ); ?>. Por <a target="_blank" rel="nofollow" href="http://imotionconsulting.com.ar/">Imotion Consulting</a>
+                            	<br />
+                            	Datos meteorológicos por: <a target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">&copy; Carlos Zotelo (CERZOS/CONICET)</a>
                             </p>
+                            
                         </div>
 
-                        <div class="col-md-5 col-xs-12">
-                            <div class="social-btns footer-btns">
-                                <!-- <h5>Contactate con nosotos</h5> -->
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-facebook"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-twitter"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-google-plus"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-youtube"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-vimeo-square"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-rss"></i></a>
-                                <a class="btn-social" href="#"><i class="fa fa-lg fa-envelope"></i></a>
-                            </div>
+                        <div class="col-md-4 col-xs-12">
+                            <ul class="social-footer">
+                                <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-rss"></i></a></li>
+                                <li><a href="#"><i class="fa fa-lg fa-envelope"></i></a></li>
+                            </ul>
                         </div>
                         
-                        <nav class="col-md-2 col-xs-12" role="navigation">
+                        <nav role="navigation">
 							<?php wp_nav_menu(array(
 	    					'container' => '',                              // remove nav container
 	    					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)

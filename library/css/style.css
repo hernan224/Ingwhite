@@ -6191,10 +6191,11 @@ and more scalable.
 */
 #nav-principal {
   background-color: #32878e;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .nav {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   margin: 0;
   /* end .menu li */
   /* highlight current page */
@@ -6226,17 +6227,22 @@ and more scalable.
   padding-left: 30px;
 }
 
-.social-btns {
+/* end of nav */
+.header-social {
+  float: right;
   text-align: right;
 }
-.social-btns .btn-social {
-  color: #fff;
-  padding: 1rem;
+.header-social li {
   display: inline-block;
+}
+.header-social a {
+  color: #fff;
+  margin: 0 0.5rem;
+  padding-left: 1rem;
   margin: 0;
   transition: all 0.2s ease;
 }
-.social-btns .btn-social:hover {
+.header-social a:hover {
   color: #ec7062;
   transition: all 0.2s ease;
 }
@@ -6255,12 +6261,11 @@ and more scalable.
   display: none;
 }
 
-/* end .nav */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 1.5em;
+  margin-top: 3rem;
 }
 
 .item--masonry {
@@ -6283,11 +6288,20 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em;
   padding: 0.5rem 0;
 }
+.hentry header {
+  margin-bottom: 1rem;
+}
 .hentry footer p {
   margin: 0;
 }
 
 /* end .hentry */
+.single-title,
+.page-title,
+.entry-title {
+  margin: 0;
+}
+
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */
@@ -6479,7 +6493,7 @@ PAGE NAVI STYLES
   color: #3d4a56;
 }
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-  background-color: #3d4a56;
+  background-color: #e53f2b;
   color: white;
 }
 .pagination .current {
@@ -6714,6 +6728,7 @@ FOOTER STYLES
 .footer {
   clear: both;
   color: #b2b2b2;
+  margin-bottom: 40px;
 }
 
 #inner-footer {
@@ -6721,42 +6736,50 @@ FOOTER STYLES
   padding-top: 10px;
 }
 
+/* Credits */
 .footer-logo {
   float: left;
   width: 32px;
-  margin-right: 4px;
+  height: 32px;
+  margin-right: 8px;
 }
 
-.footer-btns {
-  text-align: left;
-  margin-bottom: 1.5rem;
-}
-.footer-btns h5 {
-  margin: 1rem 0 0;
-  color: #777;
-}
-.footer-btns .btn-social {
+.copyright {
   float: left;
+  font-size: 0.750em;
+  margin: 0;
+}
+
+/* Social links */
+.social-footer {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.social-footer li {
+  display: inline-block;
+  margin-right: 4em;
+}
+.social-footer a {
   color: #e53f2b;
 }
-.footer-btns .btn-social:hover {
+.social-footer a:hover {
   color: #ec7062;
 }
-.footer-btns .btn-social:first-of-type {
-  margin-left: 0;
-  padding-left: 0;
-}
 
+/* end of .social-footer */
+/* Footer menu */
 #menu-footer {
   background: none;
   color: #b2b2b2;
   float: right;
+  margin: 0;
 }
 #menu-footer li {
-  float: left;
   display: inline-block;
 }
 #menu-footer li a {
+  text-align: right;
   color: #b2b2b2;
   padding: 0 8px;
 }
@@ -6772,11 +6795,6 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-.copyright {
-  float: left;
-  font-size: 12px;
-}
-
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -6934,7 +6952,7 @@ you can add resource intensive styles.
   HEADER STYLES
   *********************/
   .header {
-    padding-top: 4.5rem;
+    padding-top: 4rem;
   }
   .header #logo {
     margin: 0;
@@ -7042,10 +7060,6 @@ you can add resource intensive styles.
     color: #e53f2b;
   }
 
-  .social-btns .btn-social {
-    margin: 0 0.5rem;
-  }
-
   .tinynav {
     display: none;
   }
@@ -7086,7 +7100,7 @@ you can add resource intensive styles.
     display: block;
   }
   .widget ul li {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.25em;
     /* deep nesting */
   }
   .widget ul li a {
@@ -7152,10 +7166,6 @@ you can add resource intensive styles.
   }
   .widget.widget_sp_image {
     max-width: 100%;
-  }
-
-  .footer-btns {
-    margin-top: 2.5rem;
   }
 }
 /*********************

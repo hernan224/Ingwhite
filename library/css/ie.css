@@ -306,7 +306,7 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 .header {
-  padding-top: 4.5rem;
+  padding-top: 4rem;
 }
 .header #logo {
   margin: 0;
@@ -414,10 +414,6 @@ NAVIGATION STYLES
   color: #e53f2b;
 }
 
-.social-btns .btn-social {
-  margin: 0 0.5rem;
-}
-
 .tinynav {
   display: none;
 }
@@ -458,7 +454,7 @@ SIDEBARS & ASIDES
   display: block;
 }
 .widget ul li {
-  margin-bottom: 0.75em;
+  margin-bottom: 0.25em;
   /* deep nesting */
 }
 .widget ul li a {
@@ -516,10 +512,6 @@ be seen on the Desktop.
 }
 .widget.widget_sp_image {
   max-width: 100%;
-}
-
-.footer-btns {
-  margin-top: 2.5rem;
 }
 
 /*

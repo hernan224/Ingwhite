@@ -32,7 +32,7 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 ?>
 
 
-            <section class="cuerpo_central--home">
+            <section id="content">
 
 				<div class="wrap row between-md">
 
@@ -223,8 +223,5 @@ $id_noticias_destacadas = get_posts( $args_destacados );
             $categoria_query = 'puerto';
             include(locate_template('content-cat_home.php'));
         ?>
-
-
-
 
 <?php get_footer(); ?>

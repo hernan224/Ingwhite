@@ -162,10 +162,8 @@ HEADER STYLES
 *********************/
 
 #top-header {
-  //background: $turquesa;
   background-color: $azul;
   color: $white;
-  //font-size: 12px;
   font-size: 0.857em;
   height: 36px;
   height: 3rem;
@@ -185,11 +183,8 @@ HEADER STYLES
 
 .header {
     display: block;
-    //background-color: $azul;
-    //background-color: $turquesa;
     padding: 1.5rem 0 0;
-	//margin-bottom: 64px;
-	max-height: 300px;
+    max-height: 300px;
 
 
 
@@ -222,17 +217,14 @@ HEADER STYLES
   #logo {
     color: #fff;
     @include hide-text();
-    //text-indent: -999em;
     display: inline-block;
     background: transparent url('../images/header-logo.png') no-repeat center center;
     background-size: contain;
-    //margin: 70px 0;
     width: 100%;
     height: 60px;
     max-width: 320px;
     margin: 0 auto 1.5rem;
     padding: 0 1rem;
-    //max-height: 60px;
 
 
   }
@@ -307,20 +299,6 @@ HEADER STYLES
 }
 
 
-
-//.searchform {
-//  float: right;
-//
-//  label {
-//    display: none;
-//  }
-//
-//  input {
-//    /* float: left; */
-//  }
-//}
-
-
 .screen-reader-text{
   @extend .sr-only;
 }
@@ -339,15 +317,14 @@ and more scalable.
 */
 
 #nav-principal{
-  //background-color: $naranja;
   background-color: $turquesa;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .nav {
   //background: $verde-caca;
   //float: left;
-	//font-family: $sans-serif;
+	font-family: $sans-serif;
 	margin: 0;
 
 	li {
@@ -357,7 +334,6 @@ and more scalable.
 			color: #fff;
 			text-decoration: none;
 			padding: 1em;
-            //background-color: #fff;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -415,19 +391,24 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-}
+} /* end of nav */
 
-.social-btns{
+.header-social {
+  float: right;
   text-align: right;
-
-  .btn-social{
-    color: #fff;
-    padding: 1rem;
+  
+  li {
     display: inline-block;
+  }
+  
+  a {
+    color: #fff;
+    margin: 0 0.5rem;
+    padding-left: 1rem;
     margin: 0;
     transition: all 0.2s ease;
 
-    &:hover{
+    &:hover {
       color: $link-hover;
       transition: all 0.2s ease;
     }
@@ -444,18 +425,17 @@ and more scalable.
     padding: 0.5rem 0;
   }
 }
+
 #menu-menu-principal{
   display: none;
 }
-
-/* end .nav */
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	margin-top: 3rem;
 }
 
 //** Masonry **//
@@ -489,7 +469,7 @@ POSTS & CONTENT STYLES
 
 			header {
 				//border-bottom: 1px solid $light-gray;
-				// padding: 0.5rem 1rem;
+				margin-bottom: 1rem;
 			}
 
 			footer {
@@ -506,7 +486,7 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
-			//margin: 0;
+			margin: 0;
 		}
 
 		.single-title {}
@@ -530,11 +510,10 @@ POSTS & CONTENT STYLES
 		/* post meta */
 		.byline {
 			color: $meta-gray;
-			//font-style: italic;
-            font-weight: 700;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            overflow: hidden;
+			font-weight: 700;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      overflow: hidden;
 			margin: 0;
 
 			time {}
@@ -726,8 +705,6 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 
-
-
 //***** Noticias Destacadas
 
 .destacada--principal {
@@ -759,9 +736,6 @@ POSTS & CONTENT STYLES
   }
 
 }
-
-
-
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -805,7 +779,7 @@ PAGE NAVI STYLES
       color: $blue;
 
       &:hover, &:focus {
-      	background-color: $blue;
+      	background-color: $naranja;
       	color: $white;
       }
     }
@@ -979,9 +953,6 @@ COMMENT STYLES
 	&.thread-odd {}
 	&.thread-even {}
 }
-
-
-
 
 	/* comment meta */
 	.comment-meta {
@@ -1175,6 +1146,7 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	color: $gris;
+	margin-bottom: 40px;
 }
 
 #inner-footer {
@@ -1182,47 +1154,56 @@ FOOTER STYLES
   padding-top: 10px;
 }
 
+/* Credits */
+
 .footer-logo {
   float: left;
   width: 32px;
-  margin-right: 4px;
+  height: 32px;
+  margin-right: 8px;
 }
 
-.footer-btns{
-  text-align: left;
-  margin-bottom: 1.5rem;
+.copyright {
+  float: left;
+  font-size: 0.750em;
+  margin: 0;
+}
 
-  h5{
-    margin:1rem 0 0;
-    color: #777;
+/* Social links */
 
+.social-footer {
+  float: left;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    display: inline-block;
+    margin-right: 4em;
   }
 
-  .btn-social{
-    float: left;
+  a {
     color: $link-color;
-    &:hover{
+    
+    &:hover {
       color: $link-hover;
     }
-
-    &:first-of-type{
-      margin-left: 0;
-      padding-left: 0;
-    }
   }
 
-}
+} /* end of .social-footer */
+
+/* Footer menu */
 
 #menu-footer {
     background: none;
     color: $gris;
     float: right;
+    margin: 0;
     
     li {
-      float: left;
       display: inline-block;
         
       a {
+        text-align: right;
         color: $gris;
         padding: 0 8px;
       }
@@ -1249,9 +1230,3 @@ FOOTER STYLES
 		}
 
 	} /* end .footer-links */
-
-
-	.copyright {
-	  float: left;
-	  font-size: 12px;
-	}
