@@ -205,8 +205,6 @@ HEADER STYLES
     padding: 1.5rem 0 0;
     max-height: 300px;
 
-
-
   &.bg-0{
     background: $azul url('../images/bg-foto.jpg') top center no-repeat;
     background-size: cover;
@@ -232,7 +230,6 @@ HEADER STYLES
 //  }
 
 
-
   #logo {
     color: #fff;
     @include hide-text();
@@ -244,19 +241,17 @@ HEADER STYLES
     max-width: 320px;
     margin: 0 auto 1.5rem;
     padding: 0 1rem;
-
-
   }
 
   //SEARCHFORM
 
-  .search-form{
+  .search-form {
     width: 100%;
     position: relative;
     max-width: 300px;
     margin: 0 auto 1.5rem;
 
-    .search-field{
+    .search-field {
       right: 1.5rem;
       left: 0;
       position: absolute;
@@ -272,9 +267,7 @@ HEADER STYLES
     }
 
     .search-submit{
-
       @include hide-text();
-      //background-color: rgba($naranja, 0.4) ;
       z-index: 15;
     }
 
@@ -284,23 +277,16 @@ HEADER STYLES
       line-height: 40px;
       color: $naranja;
       display: inline-block;
-      //width: 3rem;
-      //height: 3rem
-      //display: inline-block;
+
       font-family: FontAwesome;
       font-style: normal;
       font-variant: normal;
       font-weight: normal;
-      //line-height: 1;
       font-size-adjust: none;
       font-stretch: normal;
       -moz-font-feature-settings: normal;
       -moz-font-language-override: normal;
-      //font-size: inherit;
       text-rendering: auto;
-      //font-size: 1.33333rem;
-      //line-height: 0.75rem;
-      //vertical-align: -15%;
       z-index: 10;
       text-align: center;
     }
@@ -310,7 +296,6 @@ HEADER STYLES
       position: absolute;
       top: 50%;
       right: 0;
-      //transform: translate(0, 50%);
       width: 50px;
       height: 40px;
     }
@@ -770,11 +755,9 @@ PAGE NAVI STYLES
 
     ul {
       display: inline-block;
-      background-color: $white;
       white-space: nowrap;
       padding: 0;
       clear: both;
-      border-radius: 3px;
     }
 
     li {
@@ -783,7 +766,6 @@ PAGE NAVI STYLES
       float: left;
       display: inline;
       overflow: hidden;
-      border-right: 1px solid $gray;
     }
 
     a, span {
@@ -806,11 +788,11 @@ PAGE NAVI STYLES
 
     .current{
     	cursor: default;
-    	color: $text-color;
+    	color: $naranja;
 
     	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
+    		background-color: $naranja;
+    		color: $white;
     	}
     }
 
@@ -1198,7 +1180,7 @@ FOOTER STYLES
   
   li {
     display: inline-block;
-    margin-right: 4em;
+    margin-right: 1.5em;
   }
 
   a {

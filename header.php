@@ -67,7 +67,7 @@
                         'August'    => 'Agosto',
                         'September' => 'Septiembre',
                         'October'   => 'Octubre',
-                        'November'  => 'Noviembre)',
+                        'November'  => 'Noviembre',
                         'December'  => 'Diciembre'
                     );
 					

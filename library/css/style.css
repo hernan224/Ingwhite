@@ -6482,11 +6482,9 @@ PAGE NAVI STYLES
 }
 .pagination ul {
   display: inline-block;
-  background-color: white;
   white-space: nowrap;
   padding: 0;
   clear: both;
-  border-radius: 3px;
 }
 .pagination li {
   padding: 0;
@@ -6494,7 +6492,6 @@ PAGE NAVI STYLES
   float: left;
   display: inline;
   overflow: hidden;
-  border-right: 1px solid #b2b2b2;
 }
 .pagination a, .pagination span {
   margin: 0;
@@ -6514,11 +6511,11 @@ PAGE NAVI STYLES
 }
 .pagination .current {
   cursor: default;
-  color: #777777;
+  color: #e53f2b;
 }
 .pagination .current:hover, .pagination .current:focus {
-  background-color: white;
-  color: #777777;
+  background-color: #e53f2b;
+  color: white;
 }
 
 /* end .bones_page_navi */
@@ -6774,7 +6771,7 @@ FOOTER STYLES
 }
 .social-footer li {
   display: inline-block;
-  margin-right: 4em;
+  margin-right: 1.5em;
 }
 .social-footer a {
   color: #e53f2b;
