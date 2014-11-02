@@ -15,7 +15,7 @@
                             
                         </div>
 
-                        <div class="col-md-4 col-xs-12">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
                             <ul class="social-footer">
                                 <li><a target="_blank" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
                                 <li><a target="_blank" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>

@@ -112,9 +112,9 @@ function bones_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function bones_gallery_style($css) {
+/*function bones_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
-}
+}*/
 
 
 /*********************

@@ -198,6 +198,16 @@ HEADER STYLES
       text-decoration: underline;
     }
   }
+
+  .clima-link{
+    font-weight: normal;
+
+    &:hover{
+      color: $link-hover;
+      text-decoration: none;
+      transition: all 0.2s ease-in;
+    }
+  }
 }
 
 .header {
@@ -403,12 +413,13 @@ and more scalable.
   
   li {
     display: inline-block;
+    padding: 0 1rem;
   }
   
   a {
     color: #fff;
     margin: 0 0.5rem;
-    padding-left: 1rem;
+    //padding-left: 2rem;
     margin: 0;
     transition: all 0.2s ease;
 
@@ -1116,6 +1127,7 @@ SIDEBARS & ASIDES
 .tribe-events-list-widget ol li{
   margin: 0;
   padding: 0;
+  max-width: 340px;
   //border-bottom: 1px solid $gris;
 
   .entry-title{
@@ -1140,6 +1152,15 @@ SIDEBARS & ASIDES
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}
+
+
+//PUBLICIDADES
+
+#publi--ac{
+  .widget{
+    max-width: 100%;
+  }
+}
 
 /*********************
 FOOTER STYLES
@@ -1174,8 +1195,8 @@ FOOTER STYLES
 /* Social links */
 
 .social-footer {
-  float: left;
-  margin: 0;
+  //float: left;
+  margin: 1.5rem 0 0;
   padding: 0;
   
   li {

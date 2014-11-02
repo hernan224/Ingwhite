@@ -6116,6 +6116,14 @@ HEADER STYLES
 #top-header a:hover {
   text-decoration: underline;
 }
+#top-header .clima-link {
+  font-weight: normal;
+}
+#top-header .clima-link:hover {
+  color: #ec7062;
+  text-decoration: none;
+  transition: all 0.2s ease-in;
+}
 
 .header {
   display: block;
@@ -6250,11 +6258,11 @@ and more scalable.
 }
 .header-social li {
   display: inline-block;
+  padding: 0 1rem;
 }
 .header-social a {
   color: #fff;
   margin: 0 0.5rem;
-  padding-left: 1rem;
   margin: 0;
   transition: all 0.2s ease;
 }
@@ -6714,6 +6722,7 @@ SIDEBARS & ASIDES
 .tribe-events-list-widget ol li {
   margin: 0;
   padding: 0;
+  max-width: 340px;
 }
 .tribe-events-list-widget ol li .entry-title {
   margin: 0.5rem 0;
@@ -6733,6 +6742,10 @@ SIDEBARS & ASIDES
   border: 1px solid #b2b2b2;
   border-radius: 2px;
   margin-bottom: 1.5em;
+}
+
+#publi--ac .widget {
+  max-width: 100%;
 }
 
 /*********************
@@ -6765,8 +6778,7 @@ FOOTER STYLES
 
 /* Social links */
 .social-footer {
-  float: left;
-  margin: 0;
+  margin: 1.5rem 0 0;
   padding: 0;
 }
 .social-footer li {
@@ -7127,20 +7139,14 @@ you can add resource intensive styles.
     max-width: 340px;
   }
 
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
   /*********************
   FOOTER STYLES
   *********************/
+  .social-footer {
+    margin: 0.5rem 0 0;
+    text-align: right;
+  }
+
   /*
   you'll probably need to do quite a bit
   of overriding here if you styled them for
@@ -7178,6 +7184,10 @@ you can add resource intensive styles.
     margin: 2em 0;
   }
   .widget.widget_sp_image {
+    max-width: 100%;
+  }
+
+  .tribe-events-list-widget ol li {
     max-width: 100%;
   }
 }

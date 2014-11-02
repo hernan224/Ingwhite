@@ -468,20 +468,14 @@ SIDEBARS & ASIDES
   max-width: 340px;
 }
 
-/* links widget */
-/* meta widget */
-/* pages widget */
-/* recent-posts widget */
-/* archives widget */
-/* tag-cloud widget */
-/* calendar widget */
-/* category widget */
-/* recent-comments widget */
-/* search widget */
-/* text widget */
 /*********************
 FOOTER STYLES
 *********************/
+.social-footer {
+  margin: 0.5rem 0 0;
+  text-align: right;
+}
+
 /*
 you'll probably need to do quite a bit
 of overriding here if you styled them for
@@ -511,6 +505,10 @@ be seen on the Desktop.
   margin: 2em 0;
 }
 .widget.widget_sp_image {
+  max-width: 100%;
+}
+
+.tribe-events-list-widget ol li {
   max-width: 100%;
 }
 

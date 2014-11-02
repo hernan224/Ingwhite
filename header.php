@@ -100,6 +100,7 @@
                           echo 'No hay información meteorológica disponible. Consulte: <a class="clima-link" target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">Meteobahía</a>' ;
                         }
                         else{
+                            echo '<a class="clima-link" target="_blank" rel="nofollow" title="Ver pronóstico extendido" href="http://meteobahia.com.ar/">';
                             /** Preparo string para guardar el texto del clima**/
                             $clima_str = '';
 
@@ -143,6 +144,7 @@
                             echo $clima_str;
                             //echo ' ';
                             //echo '°'.$clima_ob->cc->Units['temp'];
+                            echo '</a>';
                         }
                         //else { echo 'ERROR!';}
                         ?>
@@ -182,7 +184,7 @@
 
                     <div class="wrap cf">
                         <div class="row between-xs">
-                            <div class="col-xs-8 col-sm-9 col-md-10">
+                            <div class="col-xs-8 col-sm-10">
                                 <?php wp_nav_menu(array(
                                     'container' => false,                           // remove nav container
                                     'container_class' => 'menu cf',                 // class of container (should you choose to use it)
@@ -198,7 +200,7 @@
                                 )); ?>
 
                             </div>
-                            <div class="col-xs-4 col-sm-3 col-md-2 last-col">
+                            <div class="col-xs-4 col-sm-2 last-col">
                                 <ul class="header-social">
                                     <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
