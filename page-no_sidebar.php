@@ -1,15 +1,22 @@
+<?php
+/*
+ Template Name: Page witout sidebar
+*/
+?>
+
 <?php get_header(); ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf row">
 
-                    <?php if (have_posts()) : ?>
-                        <div id="main" class="col-xs-12 col-md-7" role="main">
+                    <?php if ( have_posts() ) : ?>
+                        <div id="main" class="col-xs-12 col-md-12" role="main">
 
-                            <!--Widget para publicidad ancho de contenido-->
-                            <?php // get_sidebar('publi_ac'); ?>
-                            <!--Fin widget publicidad ancho contenido-->
+                            <?php
+                            	// Mostrar publicidad ancho contenido
+                            	// get_sidebar('publi_ac');
+                            ?>
 
                             <?php while (have_posts()) : the_post(); ?>
 
@@ -30,12 +37,6 @@
 							<?php endwhile; ?>
 
 						</div>
-
-                    <div class="col-xs-12 col-md-4">
-
-                        <?php get_sidebar( 'principal' ); ?>
-
-                    </div>
 
                     <?php else :
 

@@ -668,6 +668,16 @@ POSTS & CONTENT STYLES
 				margin: 0 0 1.5em;
 				border-radius: 3px;
 			}
+			
+			/* Remove border from widget class */
+			.panel-grid {
+			  .widget {
+			    border: none;
+			    display: block;
+			    margin: 0;
+			    padding: 0;
+			  }
+			}
 
 		} /* end .entry-content */
 
@@ -752,6 +762,48 @@ POSTS & CONTENT STYLES
   }
 
 }
+
+/* Contact form [cf7] */
+
+.wpcf7 {
+  
+  .wpcf7-form-control-wrap {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border: 1px solid $gris;
+    width: 400px;
+    
+    &:focus {
+      border: 1px solid $azul;
+      outline: none;
+    }
+  }
+  
+  textarea {
+    padding: 10px;
+    width: 600px;
+  }
+  
+  .wpcf7-submit {
+    background: $gris;
+    border: none;
+    color: $white;
+    font-weight: 600;
+    padding: 12px 32px;
+    transition: background 0.25s ease;
+    
+    &:hover {
+      background: $azul;
+      
+    }
+  }
+  
+} /* end of .wpcf7 */
 
 /******************************************************************
 PAGE NAVI STYLES

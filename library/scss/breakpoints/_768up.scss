@@ -70,10 +70,6 @@ HEADER STYLES
   }
 }
 
-
-
-
-
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -226,7 +222,6 @@ NAVIGATION STYLES
 
 }
 
-
 //****** Noticias por categoría Home
 
 .home--noticias_categoria{
@@ -240,15 +235,28 @@ NAVIGATION STYLES
   }
 }
 
+/* Contact form [cf7] */
+
+.wpcf7 {
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 400px !important;
+  }
+  
+  textarea {
+    padding: 10px;
+    width: 600px !important;
+  }
+   
+} /* end of .wpcf7 */
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {
-	//margin-top: 2.2em;
-    //padding-left: 2rem;
-    //display: block;
-}
+.sidebar {}
 
 	.widgettitle {
 		margin: 0.25em 0 0.75em 0;
@@ -377,7 +385,7 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.social-footer{
+.social-footer {
   margin: 0.5rem 0 0;
   text-align: right;
 }

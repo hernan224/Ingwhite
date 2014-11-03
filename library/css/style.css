@@ -6359,6 +6359,7 @@ POSTS & CONTENT STYLES
   and floating images at the next breakpoint,
   but it's up to you. Feel free to change it up.
   */
+  /* Remove border from widget class */
 }
 .entry-content p {
   margin: 0 0 1.5em;
@@ -6430,6 +6431,12 @@ POSTS & CONTENT STYLES
   margin: 0 0 1.5em;
   border-radius: 3px;
 }
+.entry-content .panel-grid .widget {
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
 
 /* end .entry-content */
 .wp-caption {
@@ -6477,6 +6484,40 @@ POSTS & CONTENT STYLES
   color: #e53f2b;
 }
 
+/* Contact form [cf7] */
+.wpcf7 .wpcf7-form-control-wrap {
+  display: block;
+  margin-top: 10px;
+}
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  border: 1px solid #b2b2b2;
+  width: 400px;
+}
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 textarea:focus {
+  border: 1px solid #3d4a56;
+  outline: none;
+}
+.wpcf7 textarea {
+  padding: 10px;
+  width: 600px;
+}
+.wpcf7 .wpcf7-submit {
+  background: #b2b2b2;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px 32px;
+  transition: background 0.25s ease;
+}
+.wpcf7 .wpcf7-submit:hover {
+  background: #3d4a56;
+}
+
+/* end of .wpcf7 */
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -7112,6 +7153,18 @@ you can add resource intensive styles.
     display: none;
   }
 
+  /* Contact form [cf7] */
+  .wpcf7 input[type="text"],
+  .wpcf7 input[type="email"],
+  .wpcf7 textarea {
+    width: 400px !important;
+  }
+  .wpcf7 textarea {
+    padding: 10px;
+    width: 600px !important;
+  }
+
+  /* end of .wpcf7 */
   /*********************
   SIDEBARS & ASIDES
   *********************/

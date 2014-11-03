@@ -441,6 +441,18 @@ NAVIGATION STYLES
   display: none;
 }
 
+/* Contact form [cf7] */
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  width: 400px !important;
+}
+.wpcf7 textarea {
+  padding: 10px;
+  width: 600px !important;
+}
+
+/* end of .wpcf7 */
 /*********************
 SIDEBARS & ASIDES
 *********************/
