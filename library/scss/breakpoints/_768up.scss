@@ -59,13 +59,17 @@ HEADER STYLES
     padding: 0;
   }
 
-  .search-form{
+  .search-form {
     margin: -3px 0 0;
     max-width: 100%;
 
-    .search-field{
+    .search-field {
       left: 25%;
       width: 75%;
+
+      &:focus {
+      	outline: none;
+      }
     }
   }
 }
@@ -105,7 +109,6 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			// border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
@@ -206,10 +209,7 @@ NAVIGATION STYLES
   width: 47%;
 }
 
-.sizer{
-  //margin-right: 1%;
-  //height: 0;
-  //visibility: hidden;
+.sizer {
 
   &.gutter--sizer{
     width: 4%;
@@ -263,8 +263,6 @@ SIDEBARS & ASIDES
 	}
 
 	.widget {
-	  border-top: 1px solid $gris;
-      //margin: 2em 0;
       min-width: 26%;
       display: block;
 
