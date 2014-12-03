@@ -17,13 +17,13 @@
 
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <ul class="social-footer">
-                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
-                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
-                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
-                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-youtube"></i></a></li>
-                                <li><a target="_blank" href="#"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
-                                <li><a target="_blank" href="<?php bloginfo('rdf_url'); ?>"><i class="fa fa-lg fa-rss"></i></a></li>
-                                <li><a href="mailto:info@ingenierowhite.com"><i class="fa fa-lg fa-envelope"></i></a></li>
+                                <li><a title="Facebook" target="_blank" href="https://www.facebook.com/IngenieroWhiteOficial"><i class="fa fa-lg fa-facebook"></i></a></li>
+                                <li><a title="Twitter" target="_blank" href="https://twitter.com/IWOficial"><i class="fa fa-lg fa-twitter"></i></a></li>
+                                <li><a title="Flickr" target="_blank" href="https://www.flickr.com/photos/128423552@N08"><i class="fa fa-lg fa-flickr"></i></a></li>
+                                <li><a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCqRlBKULtbYGe-dCTvj8k6w"><i class="fa fa-lg fa-youtube"></i></a></li>
+                                <li><a title="Vimeo" target="_blank" href="https://vimeo.com/ingenierowhite"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
+                                <li><a title="RSS Feed" target="_blank" href="<?php bloginfo('rdf_url'); ?>"><i class="fa fa-lg fa-rss"></i></a></li>
+                                <li><a title="Contacto" href="mailto:contacto@ingenierowhite.com"><i class="fa fa-lg fa-envelope"></i></a></li>
                             </ul>
                         </div>
                         

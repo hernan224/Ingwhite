@@ -1,36 +1,34 @@
 <?php get_header(); ?>
 
 <?php
-//Array con los ids de los posts que ya se mostraron
-global $posts_excluidos;
+    //Array con los ids de los posts que ya se mostraron
+    global $posts_excluidos;
 
-//Mostrar noticias destacadas unicamente en el Home
-/*if ( $paged < 2 ){*/
-    //get_template_part( 'content', 'destacadas_home' );
-/*}*/
+    //Mostrar noticias destacadas unicamente en el Home
+    /*if ( $paged < 2 ){*/
+        //get_template_part( 'content', 'destacadas_home' );
+    /*}*/
 
-/* Preparar query para noticias destacadas */
+    /* Preparar query para noticias destacadas */
 
-$post_por_pagina = 1;
-$args_destacados = array(
-    'post_type' => 'post',
-    //'articulo_destacado' => 'articulo-destacado',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'articulo_destacado',
-            'field'    => 'slug',
-            'terms'    => 'articulo-destacado',
+    $post_por_pagina = 1;
+    $args_destacados = array(
+        'post_type' => 'post',
+        //'articulo_destacado' => 'articulo-destacado',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'articulo_destacado',
+                'field'    => 'slug',
+                'terms'    => 'articulo-destacado',
+            ),
         ),
-    ),
-    'posts_per_page' => $post_por_pagina,
-    'fields' => 'ids'
-);
+        'posts_per_page' => $post_por_pagina,
+        'fields' => 'ids'
+    );
 
-$id_noticias_destacadas = get_posts( $args_destacados );
-
+    $id_noticias_destacadas = get_posts( $args_destacados );
 
 ?>
-
 
             <section id="content">
 
@@ -46,12 +44,18 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 
                             <article id="post-<?php echo $id_post; ?> cf" class="nota--destacada destacada--principal" role="article">
 
-
-
-
                                 <section class="entry-content cf">
 
-                                    <h1 class="h2 entry-title"><a href="<?php echo get_the_permalink($id_post) ?>" rel="bookmark" title="<?php the_title_attribute(array('post'=> $id_post)); ?>"><?php echo get_the_title($id_post); ?></a></h1>
+                                    <p class="byline vcard">
+                                        <?php
+                                            $category = get_the_category($id_post);
+                                            if($category[0]){
+                                                echo '<a class="categoria-noticia" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
+                                            }
+                                        ?>
+
+                                        <span class="fecha-noticias"> <?php echo get_the_time('d/m/Y', $id_post) ?> </span>
+                                    </p>
 
                                     <?php if ( has_post_thumbnail($id_post) ) :  ?>
 
@@ -59,10 +63,10 @@ $id_noticias_destacadas = get_posts( $args_destacados );
                                             <a href="<?php echo get_permalink($id_post) ?>" rel="bookmark" title="<?php the_title_attribute(array('post'=> $id_post)); ?>">
                                                 <?php
 
-                                                $factor = 1.7;
-                                                $ancho_th = 750;
-                                                $alto_th = $ancho_th/$factor;
-                                                echo get_the_post_thumbnail($id_post, array( $ancho_th, $alto_th, 'bfi_thumb' => true, 'crop' => true, 'class' => " img-responsive" ));
+                                                    $factor = 1.7;
+                                                    $ancho_th = 750;
+                                                    $alto_th = $ancho_th/$factor;
+                                                    echo get_the_post_thumbnail($id_post, array( $ancho_th, $alto_th, 'bfi_thumb' => true, 'crop' => true, 'class' => " img-responsive" ));
 
                                                 ?>
 
@@ -71,41 +75,27 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 
                                     <?php endif; ?>
 
-                                    <p class="byline vcard">
-                                        <?php
-                                        $category = get_the_category($id_post);
-                                        if($category[0]){
-                                            echo '<a class="categoria-noticia" href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
-                                        }
-                                        ?>
+                                    <h1 class="h2 entry-title"><a href="<?php echo get_the_permalink($id_post) ?>" rel="bookmark" title="<?php the_title_attribute(array('post'=> $id_post)); ?>"><?php echo get_the_title($id_post); ?></a></h1>
 
-                                        <span class="fecha-noticias"> <?php echo get_the_time('d/m/Y', $id_post) ?> </span>
-
-                                        <?php //printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('d/m/Y'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-                                    </p>
-
-
-                                    <?php //the_excerpt();
-                                        //echo get_the_excerpt($id_post);
-                                        echo white_excerpt_by_id($id_post, 150);
-                                    ?>
+                                    <?php echo white_excerpt_by_id($id_post, 50); ?>
 
                                 </section>
                             </article>
 
                         </section> <!--/noticias destacadas-->
 
-                        <?php endif;
-                        $posts_excluidos = array_merge($posts_excluidos, $id_noticias_destacadas);
-                        //print_r($posts_excluidos);
-                        wp_reset_postdata();?>
+                        <?php
+                            endif;
+                            $posts_excluidos = array_merge($posts_excluidos, $id_noticias_destacadas);
+                            //print_r($posts_excluidos);
+                            wp_reset_postdata();
+                        ?>
 
                         <!--Widget para publicidad ancho de contenido-->
 
                         <?php get_sidebar('publi_ac'); ?>
 
                         <!--Fin widget publicidad ancho contenido-->
-
 
                             <div id="masonry" class="masonry">
 
@@ -114,19 +104,20 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 
                             <?php
 
-                            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $modificar_query['paged'] = $paged;
-                            //$modificar_query['post_type'] = 'post';
-                                /** Preparando Query principal **/
-                            if (isset($posts_excluidos) && (count($posts_excluidos) > 0)){
-                                $modificar_query['post__not_in'] = $posts_excluidos;
-                            }
+                                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                                $modificar_query['paged'] = $paged;
+                                //$modificar_query['post_type'] = 'post';
+                                    /** Preparando Query principal **/
+                                if (isset($posts_excluidos) && (count($posts_excluidos) > 0)){
+                                    $modificar_query['post__not_in'] = $posts_excluidos;
+                                }
 
-                            //$modificar_query['posts_per_page'] = 15;
+                                //$modificar_query['posts_per_page'] = 15;
+    							$modificar_query['category__not_in'] = array(15,16);
 
-                            $args = array_merge($wp_query->query_vars, $modificar_query);
+                                $args = array_merge($wp_query->query_vars, $modificar_query);
 
-                            $home_query = new WP_query($args);
+                                $home_query = new WP_query($args);
 
                             ?>
 
@@ -213,14 +204,14 @@ $id_noticias_destacadas = get_posts( $args_destacados );
 
         <?php
 
-        /* Seccion noticias deportes en Home */
-            $categoria_query = 'deportes';
+        /* Seccion noticias personajes en Home */
+            $categoria_query = 'personajes';
             include(locate_template('content-cat_home.php'));
         ?>
 
         <?php
-            /* Seccion noticias deportes en Home */
-            $categoria_query = 'puerto';
+            /* Seccion noticias historia en Home */
+            $categoria_query = 'historia';
             include(locate_template('content-cat_home.php'));
         ?>
 

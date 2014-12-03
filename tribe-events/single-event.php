@@ -27,8 +27,6 @@ $event_id = get_the_ID();
         <!-- Notices -->
         <?php tribe_events_the_notices() ?>
 
-
-
     <div class="byline">
 
         <a class="categoria-noticia" href="<?php echo tribe_get_events_link() ?>"> Agenda</a>
@@ -101,11 +99,7 @@ $event_id = get_the_ID();
 			?>
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 		</div> <!-- #post-x -->
-		<?php //if ( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template()
-
-            comments_template();
-        ?>
+		<?php //if ( get_post_type() == TribeEvents::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 	<?php endwhile; ?>
-
 
 </div><!-- #tribe-events-content -->

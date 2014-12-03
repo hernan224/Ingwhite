@@ -218,26 +218,6 @@ HEADER STYLES
     background-size: cover;
   }
 
-//  &.bg-1{
-//    background: red;
-//  }
-//  &.bg-2{
-//    background: blue;
-//  }
-//  &.bg-3{
-//    background: green;
-//  }
-//  &.bg-4{
-//    background: orange;
-//  }
-//  &.bg-5{
-//    background: yellow;
-//  }
-//  &.bg-6{
-//    background: #000;
-//  }
-
-
   #logo {
     color: #fff;
     @include hide-text();
@@ -333,8 +313,6 @@ and more scalable.
 }
 
 .nav {
-  //background: $verde-caca;
-  //float: left;
 	font-family: $sans-serif;
 	margin: 0;
 
@@ -416,7 +394,6 @@ and more scalable.
   a {
     color: #fff;
     margin: 0 0.5rem;
-    //padding-left: 2rem;
     margin: 0;
     transition: all 0.2s ease;
 
@@ -458,7 +435,6 @@ POSTS & CONTENT STYLES
 }
 
 .sizer {
-  //margin-right: 1%;
   height: 0;
   visibility: hidden;
 
@@ -473,21 +449,14 @@ POSTS & CONTENT STYLES
 }
 
 		.hentry {
-			//background-color: $white;
-			//border-radius: 3px;
 			margin-bottom: 1.5em;
-			//border-top: 1px solid $border-color;
-			padding: 0.75rem;
+			padding: 0.75rem 0;
 
 			header {
-				//border-bottom: 1px solid $light-gray;
 				margin-bottom: 1rem;
-
 			}
 
 			footer {
-				// padding: 1.5rem 1rem;
-				//border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
@@ -730,9 +699,10 @@ POSTS & CONTENT STYLES
 //***** Noticias Destacadas
 
 .destacada--principal {
-  margin: 1.5rem 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid $verde-caca;
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid $gris;
+  border-top: 1px solid $gris;
 
   p:not(.byline) {
     font-size: 1.125em;
@@ -1161,14 +1131,10 @@ SIDEBARS & ASIDES
 
 		}
 
-      img{
+      img {
         max-width: 100%;
         height: auto;
       }
-
-//      &.widget_sp_image{
-//
-//      }
 
 	}
 
@@ -1176,10 +1142,9 @@ SIDEBARS & ASIDES
   margin: 0;
   padding: 0;
   max-width: 340px;
-  //border-bottom: 1px solid $gris;
 
-  .entry-title{
-    margin: 0.5rem 0;
+  .entry-title {
+    margin: 0 0 0.75rem 0;
 
     a{
       color: $link-color;

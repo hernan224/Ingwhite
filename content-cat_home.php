@@ -22,7 +22,7 @@
                 </h2>
             </header>
 
-            <div class="row between-md">
+            <div class="row">
 
                 <?php while ($query_cat->have_posts()) : $query_cat->the_post(); ?>
 

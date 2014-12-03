@@ -6321,7 +6321,7 @@ POSTS & CONTENT STYLES
 
 .hentry {
   margin-bottom: 1.5em;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
 }
 .hentry header {
   margin-bottom: 1rem;
@@ -6422,7 +6422,7 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em;
 }
 .entry-content img {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1em 0;
   max-width: 100%;
   height: auto;
 }
@@ -6476,9 +6476,10 @@ POSTS & CONTENT STYLES
 }
 
 .destacada--principal {
-  margin: 1.5rem 0;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #545f31;
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
 }
 .destacada--principal p:not(.byline) {
   font-size: 1.125em;
@@ -6786,7 +6787,7 @@ SIDEBARS & ASIDES
   max-width: 340px;
 }
 .tribe-events-list-widget ol li .entry-title {
-  margin: 0.5rem 0;
+  margin: 0 0 0.75rem 0;
 }
 .tribe-events-list-widget ol li .entry-title a {
   color: #e53f2b;
@@ -7253,13 +7254,12 @@ you can add resource intensive styles.
   }
 
   .sidebar {
-    margin-top: 2.2em;
     padding-left: 2rem;
     display: block;
   }
 
   .widget {
-    margin: 2em 0;
+    margin: 0 0 2em 0;
   }
   .widget.widget_sp_image {
     max-width: 100%;

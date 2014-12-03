@@ -11,7 +11,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php wp_title(' - '); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -202,8 +202,8 @@
                             </div>
                             <div class="col-xs-4 col-sm-2 last-col">
                                 <ul class="header-social">
-                                    <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/IngenieroWhiteOficial" target="_blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/IWOficial" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>

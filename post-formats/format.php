@@ -1,4 +1,3 @@
-
               <?php
                 /*
                  * This is the default post format.
@@ -89,7 +88,7 @@
 
                 </footer> --><?php /*// end article footer */?>
 
-                <?php comments_template(); ?>
+				<?php // comments_template(); ?>
 
                 <?php //disqus_embed('ingwhitetest'); ?>
 
