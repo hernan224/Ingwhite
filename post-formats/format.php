@@ -17,7 +17,7 @@
 
                 <header class="article-header">
 
-                  <h1 class="h2 entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+                  <h1 class="h3 entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
                     <p class="byline vcard">
                         <?php
@@ -47,9 +47,16 @@
                     <?php endif; ?>
 
                     <?php
-                    if( $post->post_excerpt ) {
-                        the_excerpt();
-                    }
+                    if( $post->post_excerpt ) : ?>
+                        <p class="the-excerpt"><?php echo get_the_excerpt() ?></p>
+                    <?php endif; ?>
+
+                    <?php
+                        if ( function_exists( 'sharing_display' ) ) {
+                            //echo '<div class="thumb-share">';
+                            sharing_display( '', true );
+                            //echo '</div>';
+                        }
                     ?>
 
                 </header> <?php // end article header ?>
@@ -88,7 +95,7 @@
 
                 </footer> --><?php /*// end article footer */?>
 
-				<?php // comments_template(); ?>
+				<?php //comments_template(); ?>
 
                 <?php //disqus_embed('ingwhitetest'); ?>
 

@@ -135,7 +135,11 @@ function bones_scripts_and_styles() {
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
         //FontAwsome
-        wp_register_style( 'bones-fontawsome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '4.2.0', 'all' );
+        wp_register_style( 'bones-fontawsome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '4.2.0', 'all' );
+        //Weather Icons
+        wp_register_style( 'bones-weather', 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css', array(), '2.0.9', 'all' );
+        //Weather Wind Icons
+        wp_register_style( 'bones-weather-wind', 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css', array(), '2.0.9', 'all' );
 
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -157,6 +161,9 @@ function bones_scripts_and_styles() {
         //tinynav js
         wp_register_script( 'bones-tinynav-js', get_stylesheet_directory_uri() . '/library/js/libs/tinynav.min.js', array(), '', true );
 
+        //Dropdown
+        wp_register_script( 'bones-dropdown-js', get_stylesheet_directory_uri() . '/library/js/libs/dropdown.js', array( 'jquery' ), '', true );
+
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
@@ -164,6 +171,8 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-modernizr' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-fontawsome' );
+		wp_enqueue_style( 'bones-weather' );
+		wp_enqueue_style( 'bones-weather-wind' );
 		wp_enqueue_style( 'bones-ie-only' );
         wp_enqueue_style( 'bones-outdated-browser-style' );
 
@@ -179,6 +188,7 @@ function bones_scripts_and_styles() {
         wp_enqueue_script('bones-imageloaded-js');
         wp_enqueue_script('bones-tinynav-js');
         wp_enqueue_script( 'jquery' );
+        wp_enqueue_script('bones-dropdown-js');
 		wp_enqueue_script( 'bones-js' );
 
 	}

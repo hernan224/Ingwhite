@@ -133,7 +133,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     color: $azul;
-    letter-spacing: -1px;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -141,20 +142,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 	/* removing text decoration from all headline links */
 	a {
-	  color: $azul;
+	    color: $azul;
 		text-decoration: none;
+
+      &:hover{
+        color: $naranja;
+      }
 	}
 }
 
 h1, .h1 {
 	font-size: 2.75rem;
-	line-height: 1.2em;
+//	line-height: 1.3;
     margin-bottom: 0.495rem;
 }
 
 h2, .h2 {
     font-size: 2rem;
-	line-height: 1.4em;
+//	line-height: 1.4em;
     margin-bottom: 0.61875rem;
 }
 
@@ -171,6 +176,9 @@ h4, .h4 {
 
 h5, .h5 {
     font-size: 1.125rem;
+	//line-height: 2.09em;
+	//text-transform: uppercase;
+	//letter-spacing: 2px;
     margin-bottom: 1.41429rem;
 }
 
@@ -181,12 +189,12 @@ HEADER STYLES
 #top-header {
   background-color: $azul;
   color: $white;
-  font-size: 0.857em;
+  //font-size: 0.857em;
   height: 36px;
   height: 3rem;
   line-height: 36px;
   line-height: 3rem;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 
   a{
     color: #fff;
@@ -197,15 +205,34 @@ HEADER STYLES
     }
   }
 
-  .clima-link{
-    font-weight: normal;
+  .radio-stream{
+    margin: 0;
+    float: right;
+    padding-right: 140px;
+    position: relative;
+    font-size: 0.85em;
+    font-weight: 700;
 
-    &:hover{
-      color: $link-hover;
-      text-decoration: none;
-      transition: all 0.2s ease-in;
+    object{
+      position: absolute;
+      top: 6px;
+      right: 0;
+    }
+
+    a{
+      color: #fff;
     }
   }
+
+//  .clima-link{
+//    font-weight: normal;
+//
+//    &:hover{
+//      color: $link-hover;
+//      text-decoration: none;
+//      transition: all 0.2s ease-in;
+//    }
+//  }
 }
 
 .header {
@@ -213,10 +240,33 @@ HEADER STYLES
     padding: 1.5rem 0 0;
     max-height: 300px;
 
-  &.bg-0{
-    background: $azul url('../images/bg-foto.jpg') top center no-repeat;
-    background-size: cover;
+  &.bg-foto{
+    background: $azul top center no-repeat / cover;
+    //background-size: cover;
+
+    &.bg-1,
+    &.bg-0{
+      background-image: url('../images/bg-header-1.jpg');
+    }
+    &.bg-2{
+      background-image: url('../images/bg-header-2.jpg');
+    }
+    //&.bg-3{
+    //  background-image: url('../images/bg-header-3.jpg');
+    //}
+    &.bg-3{
+      background-image: url('../images/bg-header-4.jpg');
+    }
   }
+
+
+//  &.bg-5{
+//    background: yellow;
+//  }
+//  &.bg-6{
+//    background: #000;
+//  }
+
 
   #logo {
     color: #fff;
@@ -233,62 +283,9 @@ HEADER STYLES
 
   //SEARCHFORM
 
-  .search-form {
-    width: 100%;
-    position: relative;
-    max-width: 300px;
-    margin: 0 auto 1.5rem;
 
-    .search-field {
-      right: 1.5rem;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      padding-right: 50px;
-
-      &:focus,
-      &:active {
-        left: 0;
-        right: 1.5rem;
-        width: 100%;
-      }
-    }
-
-    .search-submit{
-      @include hide-text();
-      z-index: 15;
-    }
-
-    &:after{
-      content: "\f002";
-      font-size: 1.5rem;
-      line-height: 40px;
-      color: $naranja;
-      display: inline-block;
-
-      font-family: FontAwesome;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: normal;
-      font-size-adjust: none;
-      font-stretch: normal;
-      -moz-font-feature-settings: normal;
-      -moz-font-language-override: normal;
-      text-rendering: auto;
-      z-index: 10;
-      text-align: center;
-    }
-
-    &:after,
-    .search-submit{
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 50px;
-      height: 40px;
-    }
-  }
 }
+
 
 .screen-reader-text{
   @extend .sr-only;
@@ -307,12 +304,15 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
-#nav-principal {
+#nav-principal{
   background-color: $turquesa;
   margin-top: 4rem;
+  transition: top 0.25s ease;
 }
 
 .nav {
+  //background: $verde-caca;
+  //float: left;
 	font-family: $sans-serif;
 	margin: 0;
 
@@ -383,32 +383,135 @@ and more scalable.
 } /* end of nav */
 
 .header-social {
-  float: right;
-  text-align: right;
+  //float: right;
+  //text-align: center;
+  position: relative;
+  //top: 1.5em;
+  justify-content: center;
   
   li {
-    display: inline-block;
-    padding: 0 1rem;
-  }
-  
-  a {
-    color: #fff;
-    margin: 0 0.5rem;
-    margin: 0;
-    transition: all 0.2s ease;
+    display: block;
+    position: relative;
+    //transition: all 0.2s ease;
+    margin: 0 3px 0 0;
 
-    &:hover {
-      color: $link-hover;
+    &:last-child{
+      margin: 0;
+    }
+
+    a {
+      color: #fff;
+      padding: 1em;
+      background-color: rgba($turquesa, 0.7);
+      //background-color: rgba(#fff, 1);
+      margin: 0;
+      //padding-left: 2rem;
+      //margin: 0;
+      //opacity: 0.6;
+      transition: all 0.2s ease;
+
+    &:hover{
+      background-color: rgba(#fff, 1);
+      color: $naranja;
+      //opacity: 1;
+      transition: all 0.2s ease;
+      }
+    }
+
+    &.open a{
+      background-color: rgba(#fff, 1);
+      color: $naranja;
       transition: all 0.2s ease;
     }
+
+  }
+
+  .dropdown-menu{
+    margin: 1em 0 0 0;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    padding: 0;
+    width: 263px;
+  }
+
+  .search-form {
+    width: 100%;
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+
+    .search-field {
+      right: 1.5rem;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      padding-right: 50px;
+      top: 0;
+      box-shadow: 0px 2px 4px 0px rgba(11, 71, 75, 0.4);
+
+      &:focus,
+      &:active {
+        left: 0;
+        right: 1.5rem;
+        width: 100%;
+      }
+    }
+
+    .search-submit{
+      @include hide-text();
+      z-index: 15;
+    }
+
+    &:after{
+      content: "\f0a9";
+      font-size: 1.75rem;
+      line-height: 40px;
+      color: $turquesa;
+      display: inline-block;
+
+      font-family: FontAwesome;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      font-size-adjust: none;
+      font-stretch: normal;
+      -moz-font-feature-settings: normal;
+      -moz-font-language-override: normal;
+      text-rendering: auto;
+      z-index: 10;
+      text-align: center;
+    }
+
+    &:after,
+    .search-submit{
+      position: absolute;
+      //top: 50%;
+      right: 0;
+      width: 50px;
+      height: 40px;
+    }
+
+    &:hover:after{
+      color: $naranja;
+    }
+  }
+
+  &.show-xs{
+    display: flex;
+  }
+
+  #nav-principal &{
+    display: none;
   }
 }
 
-.tinynav {
+.tinynav{
   display: block;
-  margin: 0.35rem 0px;
+  margin: 0.35rem auto;
   font-size: 1.12em;
   color: $naranja;
+  font-weight: 700;
 
   option{
     padding: 0.5rem 0;
@@ -424,7 +527,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 3rem;
+	margin-top: 0.75rem;
 }
 
 //** Masonry **//
@@ -432,43 +535,92 @@ POSTS & CONTENT STYLES
 .item--masonry {
   width: 100%;
   border-top: 1px solid $border-color;
+
+  .h4{
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
 }
 
-.sizer {
-  height: 0;
-  visibility: hidden;
+.thumb-share{
+  position: absolute;
+  right: 0px;
+  top: 0px;
 
-  &.gutter--sizer {
-    width: 0;
+  h3.sd-title{
+    display: none!important;
   }
+  .sd-content ul li{
+    display: none;
 
-  &.masonry--sizer {
-    width: 100%;
+    &.share-facebook,
+    &.share-twitter,
+    &.share-whatsapp{
+      display: inline-block;
+    }
+
+    a.sd-button::before{
+      font-size: 14px;
+    }
+
+    a.sd-button{
+      padding: 6px!important;
+    }
   }
-
 }
+
+//.sizer {
+//  //margin-right: 1%;
+//  height: 0;
+//  visibility: hidden;
+//
+//  &.gutter--sizer {
+//    width: 0;
+//  }
+//
+//  &.masonry--sizer {
+//    width: 100%;
+//  }
+//
+//}
 
 		.hentry {
-			margin-bottom: 1.5em;
-			padding: 0.75rem 0;
+			//background-color: $white;
+			//border-radius: 3px;
+			margin-bottom: 1em;
+			//border-top: 1px solid $border-color;
+			padding: 0.75rem;
 
 			header {
+				//border-bottom: 1px solid $light-gray;
 				margin-bottom: 1rem;
+                position: relative;
+
 			}
 
 			footer {
+				// padding: 1.5rem 1rem;
+				//border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
 				}
 			}
 
+
+          p.the-excerpt{
+            font-size: 1.25em;
+            letter-spacing: -0.2px;
+            line-height: 1.333;
+            margin-bottom: 0.75em;
+          }
+
 		} /* end .hentry */
 
 		.single-title,
 		.page-title,
 		.entry-title {
-			margin: 0 0.5em 0 0;
+			margin: 0;
 		}
 
 		.single-title {}
@@ -493,9 +645,9 @@ POSTS & CONTENT STYLES
 		.byline {
 			color: $meta-gray;
 			font-weight: 700;
-      		font-size: 0.85em;
-      		text-transform: uppercase;
-      		overflow: hidden;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      overflow: hidden;
 			margin: 0;
 
 			time {}
@@ -511,6 +663,8 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
+            position: relative;
+			// padding: 0.75rem 1rem 0;
 
 			p {
 				margin: 0 0 1.5em;
@@ -601,7 +755,7 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1em 0;
+				margin: 0 0 1.5em 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -699,13 +853,15 @@ POSTS & CONTENT STYLES
 //***** Noticias Destacadas
 
 .destacada--principal {
-  margin: 0 0 1.5rem 0;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid $gris;
-  border-top: 1px solid $gris;
+  margin: 1.5rem 0 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid $verde-caca;
 
   p:not(.byline) {
-    font-size: 1.125em;
+    font-size: 1.25em;
+    letter-spacing: -0.2px;
+    line-height: 1.333;
+    margin: 0.5em 0;
   }
 }
 
@@ -718,7 +874,7 @@ POSTS & CONTENT STYLES
   .cabecera--seccion_categoria {
 
     h2 {
-      margin: 0.75rem 0.75rem 1.5rem;
+      margin:1rem 0.75rem 0.5rem;
       
       a {
         color: $naranja;
@@ -726,6 +882,10 @@ POSTS & CONTENT STYLES
     }
     
   }
+
+//  .thumb-share{
+//    display: none;
+//  }
 
 }
 
@@ -771,12 +931,55 @@ POSTS & CONTENT STYLES
   
 } /* end of .wpcf7 */
 
+
+/* Multimedia */
+
+.header-archive{
+  .cat-archive{
+    color: $naranja;
+  }
+
+  .archive-title{
+    margin: 0 0 1.5rem;
+  }
+}
+
+.archive .multimedia{
+  .entry-content{
+    min-height: 60px;
+    img{
+      margin: 0;
+    }
+  }
+
+  .entry-title{
+    margin: 0px;
+    padding: 0.75rem;
+    background: rgba(50, 135, 142, 0.75) none repeat scroll 0% 0%;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    transition: background 0.2s ease;
+    a{
+      color: #fff;
+    }
+
+    &:hover{
+      background-color: #fff;
+      transition: background 0.3s ease;
+      a{
+        color: $naranja;
+      }
+    }
+  }
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
 
 .pagination,
-.wp-prev-next {
+.wp-prev-next{
 	margin: 1.5em 0;
 }
 	.pagination{
@@ -841,6 +1044,30 @@ PAGE NAVI STYLES
 		}
 
 	} /* end .wp-prev-next */
+
+.pag-ver-mas{
+  //display: inline-block;
+  margin: 0 0 1.5rem;
+
+  a{
+    display: inline-block;
+    width: 100%;
+    padding: 0.75em 0;
+    background-color: $gris-oscuro;
+    color: $white;
+    text-shadow: 0 1px 0 rgba(#000, 0.4);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s 0.05s ease;
+    text-align: center;
+
+    &:hover{
+      background-color: $naranja;
+      color: $white;
+      transition: background 0.25s 0.05s ease;
+    }
+  }
+}
 
 /******************************************************************
 COMMENT STYLES
@@ -1104,15 +1331,16 @@ SIDEBARS & ASIDES
   flex-flow: row wrap;
   justify-content: space-between;
   padding-left: 0;
+
 }
 
 	.widgettitle {}
 
 	.widget {
-      min-width: 100%;
+//      min-width: 100%;
       margin: 1rem 0;
-      display: none;
-
+//      display: none;
+      //border-top: 1px solid $gris;
 
 		ul {
 
@@ -1131,20 +1359,59 @@ SIDEBARS & ASIDES
 
 		}
 
-      img {
+      img{
         max-width: 100%;
         height: auto;
       }
 
-	}
+//      &.widget_sp_image{
+//
+//      }
 
-.tribe-events-list-widget ol li{
-  margin: 0;
-  padding: 0;
-  max-width: 340px;
+      &.shortcodes-ultimate{
+        display: none;
+      }
 
-  .entry-title {
-    margin: 0 0 0.75rem 0;
+
+    }
+
+#sidebar1{
+  max-width: 360px;
+  margin: 0.5em auto;
+}
+
+#barra-bottom-home{
+  max-width: 360px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-top: 1px solid $gris;
+
+  .widgettitle{
+    color: $turquesa;
+    font-size: 130%;
+  }
+}
+
+
+
+.tribe-events-list-widget ol{
+
+  margin-bottom: 0;
+
+  li{
+    margin: 0 auto 1.25rem;
+    padding: 0;
+    //max-width: 340px;
+    border-bottom: 1px solid $gris;
+
+    &:last-child{
+      border: none;
+      //margin: 0 auto;
+    }
+  }
+
+  .entry-title{
+    margin: 0.5rem 0;
 
     a{
       color: $link-color;
@@ -1155,7 +1422,69 @@ SIDEBARS & ASIDES
       }
     }
   }
+
+  .event-foto-container{
+    position: relative;
+  }
+
+  .duration{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba($turquesa, 0.6);
+    width: 30%;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    text-shadow: 0 1px 0 rgba(darken($turquesa, 10%), 1);
+  }
+
+  .event-dia{
+    font-size: 2.25rem;
+    line-height: 0.8;
+  }
+
+  .event-mes{
+    //font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.33rem;
+    //margin: 0px;
+    line-height: 0.8;
+  }
+
+  .event-hora{
+    //color: darken($azul, 20%);
+    //text-shadow: none;
+    font-size: 0.85em;
+  }
 }
+
+//.tribe-events-widget-link{
+//
+//  margin: 0 auto 1em;
+//  text-align: center;
+//
+//  a{
+//    //background-color: rgba($naranja, 0.75);
+//    background-color: $gris-oscuro;
+//    color: #fff;
+//    //text-shadow: 0 1px 0 darken($naranja, 15%);
+//    text-shadow: 0 1px 0 rgba(#000, 0.4);
+//    font-weight: 700;
+//    padding: 0.75rem 0;
+//    width: 100%;
+//    display: inline-block;
+//    transition: background 0.2s ease-out;
+//
+//    &:hover{
+//      //color: $naranja;
+//      background-color: $naranja;
+//      transition: background 0.2s ease-in;
+//    }
+//  }
+//}
 
 .no-widgets {
 		background-color: $white;
@@ -1201,8 +1530,8 @@ FOOTER STYLES
 
 .copyright {
   float: left;
-  font-size: 0.750em;
-  margin: 0;
+  font-size: 0.85em;
+  margin: 0.4em 0 0 0;
 }
 
 /* Social links */

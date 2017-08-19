@@ -9,8 +9,8 @@
                         	<a class="footer-logo" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/footer-logo.png" alt="Ingeniero White" /></a>
                             <p class="copyright">
                             	Todos los derechos reservados &copy; <?php echo date( 'Y' ); ?>. Por <a target="_blank" rel="nofollow" href="http://imotionconsulting.com.ar/">Imotion Consulting</a>
-                            	<br />
-                            	Datos meteorológicos por: <a target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">&copy; Carlos Zotelo (CERZOS/CONICET)</a>
+<!--                            	<br />-->
+<!--                            	Datos meteorológicos por: <a target="_blank" rel="nofollow" href="http://meteobahia.com.ar/">&copy; Carlos Zotelo (CERZOS/CONICET)</a>-->
                             </p>
                             
                         </div>
@@ -21,7 +21,7 @@
                                 <li><a title="Twitter" target="_blank" href="https://twitter.com/IWOficial"><i class="fa fa-lg fa-twitter"></i></a></li>
                                 <li><a title="Flickr" target="_blank" href="https://www.flickr.com/photos/128423552@N08"><i class="fa fa-lg fa-flickr"></i></a></li>
                                 <li><a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCqRlBKULtbYGe-dCTvj8k6w"><i class="fa fa-lg fa-youtube"></i></a></li>
-                                <li><a title="Vimeo" target="_blank" href="https://vimeo.com/ingenierowhite"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
+                                <!--<li><a title="Vimeo" target="_blank" href="https://vimeo.com/ingenierowhite"><i class="fa fa-lg fa-vimeo-square"></i></a></li>-->
                                 <li><a title="RSS Feed" target="_blank" href="<?php bloginfo('rdf_url'); ?>"><i class="fa fa-lg fa-rss"></i></a></li>
                                 <li><a title="Contacto" href="mailto:contacto@ingenierowhite.com"><i class="fa fa-lg fa-envelope"></i></a></li>
                             </ul>

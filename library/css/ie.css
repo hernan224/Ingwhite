@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author:
@@ -17,78 +18,78 @@ read those. Below, we need to import only the stuff IE can't
 understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 ******************************************************************/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Variables
-
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
-
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
 ******************************************************************/
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
 *********************/
 /**********************************/
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
 */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
 ******************************************************************/
-/*********************
-FONT FACE (IN YOUR FACE)
+/*********************
+FONT FACE (IN YOUR FACE)
 *********************/
-/*  To embed your own fonts, use this syntax
-  and place your fonts inside the
-  library/fonts folder. For more information
-  on embedding fonts, go to:
-  http://www.fontsquirrel.com/
-  Be sure to remove the comment brackets.
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
 */
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
 */
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
 */
-/*
- i imported this one in the functions file so bones would look sweet.
- don't forget to remove it for your site.
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
 */
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
 */
 p {
   -ms-word-break: break-all;
@@ -196,28 +197,6 @@ LAYOUT & GRID STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-/* .menu is clearfixed inside mixins.scss */
-.menu {
-  /* end .menu ul */
-}
-.menu ul {
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */
-}
-.menu ul li {
-  /*
-  plan your menus and drop-downs wisely.
-  */
-}
-.menu ul li a {
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
-}
-
-/* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -225,16 +204,19 @@ POSTS & CONTENT STYLES
 .entry-content {
   /* at this larger size, we can start to align images */
 }
+
 .entry-content .alignleft, .entry-content img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
+
 .entry-content .alignright, .entry-content img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
+
 .entry-content .aligncenter, .entry-content img.aligncenter {
   margin-right: auto;
   margin-left: auto;
@@ -246,11 +228,6 @@ POSTS & CONTENT STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.widget {
-  min-width: 45%;
-  margin: 1rem 2%;
-}
-
 /*********************
 FOOTER STYLES
 *********************/
@@ -259,21 +236,21 @@ check your menus here. do they look good?
 do they need tweaking?
 */
 /* end .footer-links */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
 ******************************************************************/
-/*********************
-GENERAL STYLES
+/*********************
+GENERAL STYLES
 *********************/
 h1, .h1 {
   font-size: 3rem;
@@ -295,34 +272,173 @@ h5, .h5 {
   font-size: 1.16667rem;
 }
 
-/*********************
-LAYOUT & GRID STYLES
+/*********************
+LAYOUT & GRID STYLES
 *********************/
 .wrap {
   width: 760px;
 }
 
-/*********************
-HEADER STYLES
+/*********************
+HEADER STYLES
 *********************/
 .header {
-  padding-top: 4rem;
-}
-.header #logo {
-  margin: 0;
-  padding: 0;
-}
-.header .search-form {
-  margin: -3px 0 0;
-  max-width: 100%;
-}
-.header .search-form .search-field {
-  left: 25%;
-  width: 75%;
+  padding-top: 1rem;
 }
 
-/*********************
-NAVIGATION STYLES
+.header #logo {
+  margin: 3rem 0 0 0;
+  padding: 0;
+}
+
+#nav-principal {
+  margin-top: 3rem;
+}
+
+.header-social {
+  justify-content: flex-end;
+}
+
+.header-social.show-xs {
+  display: none;
+}
+
+#nav-principal .header-social {
+  display: flex;
+}
+
+.menu-fijo #top-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  z-index: 800;
+  background-color: #276a70;
+  transition: all 0.25s ease;
+}
+
+.admin-bar .menu-fijo #top-header {
+  top: 32px;
+}
+
+.menu-fijo #nav-principal {
+  position: fixed;
+  width: 100%;
+  top: 3rem;
+  margin: 0px;
+  z-index: 800;
+  box-shadow: 0px 2px 4px 0px rgba(11, 71, 75, 0.4);
+  transition: top 0.25s ease;
+}
+
+.admin-bar .menu-fijo #nav-principal {
+  top: calc(3rem + 32px);
+}
+
+.menu-fijo #nav-principal .menu-item-home a {
+  background: transparent url("../images/iw-invertido.png") no-repeat center center/contain;
+  text-indent: -999em;
+  width: 40px;
+  margin: 0 20px;
+}
+
+.menu-fijo #nav-principal .menu-item-home a:hover {
+  background-image: url("../images/iw-normal.png");
+}
+
+.menu-fijo #nav-principal li a {
+  padding: 1em 0.75em;
+}
+
+.menu-fijo .header {
+  padding-bottom: 4rem;
+  margin-bottom: 56px;
+}
+
+.menu-fijo .header-social {
+  z-index: 850;
+}
+
+.menu-fijo .header-social li {
+  margin: 0;
+}
+
+.clima-sin-datos {
+  color: #fff;
+}
+
+.clima-container {
+  color: #fff;
+  margin: 0;
+  padding: 1.5em 0.5em 0 0.5em;
+  box-sizing: border-box;
+  text-shadow: 0 0 1px 1px rgba(119, 119, 119, 0.4);
+  position: relative;
+}
+
+.clima-container i {
+  color: #c0c9d2;
+  margin: 0 0.2em;
+}
+
+.clima-container i.clima-icono {
+  font-size: 2.25em;
+}
+
+.clima-container .clima-estado-general,
+.clima-container .clima-detalle {
+  text-align: center;
+}
+
+.clima-container .clima-temp {
+  font-size: 1.75em;
+}
+
+.clima-container .estado-descripcion {
+  line-height: 1.3;
+  margin: 0.25em auto;
+  word-break: normal;
+  hyphens: none;
+}
+
+.clima-container .clima-detalle span {
+  font-weight: 700;
+  margin-top: 0.25em;
+}
+
+.clima-container .clima-btn {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 0.85em;
+  font-weight: 700;
+  left: 0px;
+  top: 100%;
+  transition: all 0.3s ease-out;
+  padding: 0.15em 0;
+}
+
+.clima-container .clima-btn i {
+  font-size: 0.65em;
+  color: #fff;
+  margin: 0;
+}
+
+.clima-container .clima-btn:hover {
+  text-decoration: none;
+  background: #fff;
+  color: #E53F2B;
+  transition: all 0.3s ease-in;
+}
+
+.clima-container .clima-btn:hover i {
+  font-size: 0.65em;
+  color: #E53F2B;
+}
+
+/*********************
+NAVIGATION STYLES
 *********************/
 .nav {
   border: 0;
@@ -330,26 +446,30 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */
 }
+
 .nav ul {
-  background: #e53f2b;
+  background: #E53F2B;
   margin-top: 0;
 }
+
 .nav li {
   float: left;
   position: relative;
-  /*
-  plan your menus and drop-downs wisely.
-  */
+  /*
+		plan your menus and drop-downs wisely.
+		*/
   /* showing sub-menus */
 }
+
 .nav li a {
   border-bottom: 0;
   transition: background 0.2s ease;
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
+  /*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
 }
+
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
@@ -360,14 +480,16 @@ NAVIGATION STYLES
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   /* highlight sub-menu current page */
 }
+
 .nav li ul.sub-menu li,
 .nav li ul.children li {
-  /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
-  */
+  /*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
 }
+
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 1em;
@@ -376,20 +498,24 @@ NAVIGATION STYLES
   width: 180px;
   border-bottom: 1px solid #ec7062;
 }
+
 .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
 .nav li ul.children li a:hover,
 .nav li ul.children li a:focus {
   background-color: #ec7062;
 }
+
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
+
 .nav li ul.sub-menu li ul,
 .nav li ul.children li ul {
   top: 0;
   left: 100%;
 }
+
 .nav li ul.sub-menu li.current-menu-item a,
 .nav li ul.sub-menu li.current_page_item a,
 .nav li ul.sub-menu li.current_page_ancestor a,
@@ -398,45 +524,34 @@ NAVIGATION STYLES
 .nav li ul.children li.current_page_ancestor a {
   background-color: #ec7062;
 }
+
 .nav li:hover > ul {
   top: auto;
   visibility: visible;
 }
+
 .nav li:hover:hover a, .nav li:hover:focus a {
-  color: white;
-  background-color: #e53f2b;
+  color: #fff;
+  background-color: #E53F2B;
   transition: background 0.2s ease;
 }
+
 .nav li.current-menu-item a,
 .nav li.current_page_item a,
 .nav li.current_page_ancestor a {
   background-color: #fff;
-  color: #e53f2b;
-}
-
-.tinynav {
-  display: none;
-}
-
-#menu-menu-principal {
-  display: inline-block;
+  color: #E53F2B;
 }
 
 /* end .nav */
 .item--masonry {
-  width: 47%;
-}
-
-.sizer.gutter--sizer {
-  width: 4%;
-}
-.sizer.masonry--sizer {
   width: 48%;
 }
 
 .home--noticias_categoria .hentry {
   border-top: none;
 }
+
 .home--noticias_categoria .byline {
   display: none;
 }
@@ -447,81 +562,142 @@ NAVIGATION STYLES
 .wpcf7 textarea {
   width: 400px !important;
 }
+
 .wpcf7 textarea {
   padding: 10px;
   width: 600px !important;
 }
 
 /* end of .wpcf7 */
-/*********************
-SIDEBARS & ASIDES
+/** GUÍA COMERCIAL **/
+.guia--contenido_general .wpas-taxonomy-field {
+  display: block;
+}
+
+/*********************
+SIDEBARS & ASIDES
 *********************/
 .widgettitle {
   margin: 0.25em 0 0.75em 0;
 }
 
-.widget {
-  border-top: 1px solid #b2b2b2;
-  min-width: 26%;
-  display: block;
-}
 .widget ul li {
   margin-bottom: 0.25em;
   /* deep nesting */
 }
+
 .widget ul li a {
   color: #b2b2b2;
 }
+
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
 }
-.widget.widget_sp_image {
-  max-width: 340px;
+
+#sidebar1 {
+  max-width: 100%;
 }
 
-/*********************
-FOOTER STYLES
+#barra-bottom-home {
+  max-width: 100%;
+}
+
+/*********************
+FOOTER STYLES
 *********************/
 .social-footer {
   margin: 0.5rem 0 0;
   text-align: right;
 }
 
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
 */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Desktop Stylsheet
-
-This is the desktop size. It's larger than an iPad so it will only
-be seen on the Desktop.
-
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
 ******************************************************************/
 .wrap {
   width: 960px;
 }
 
+#nav-principal {
+  margin-top: 3rem;
+}
+
+#menu-menu-principal {
+  display: inline-block;
+}
+
+.tinynav {
+  display: none;
+}
+
+.clima-container .clima-estado-general {
+  display: inline-block;
+  width: 56%;
+  margin: 0 2% 0 0;
+  vertical-align: top;
+  position: relative;
+}
+
+.clima-container .clima-icono {
+  font-size: 2.5em;
+  margin-left: 0;
+}
+
+.clima-container .clima-temp {
+  font-size: 2em;
+}
+
+.clima-container .clima-detalle {
+  display: inline-block;
+  width: 40%;
+  text-align: left;
+}
+
+.clima-container .clima-detalle span {
+  display: block;
+  margin: auto;
+}
+
+.clima-container .clima-detalle .clima-separador {
+  display: none;
+}
+
 .sidebar {
-  margin-top: 2.2em;
   padding-left: 2rem;
   display: block;
 }
 
 .widget {
-  margin: 2em 0;
+  border: none;
+  margin: 1.5rem 0;
 }
+
 .widget.widget_sp_image {
   max-width: 100%;
 }
 
-.tribe-events-list-widget ol li {
-  max-width: 100%;
+.widget.shortcodes-ultimate {
+  display: block;
+}
+
+#barra-bottom-home .widget {
+  border-top: none;
+}
+
+#sidebar1 {
+  margin: 0;
 }
 
 /*

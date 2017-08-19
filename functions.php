@@ -8,8 +8,15 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
+
+// Libreria para crear busquedas avanzadas
+require_once( 'wp-advanced-search/wpas.php' );
 
 // Libreria para crear tumbnails al vuelo BFI_thumb
 require_once( 'library/BFI_Thumb.php' );
@@ -125,7 +132,7 @@ function bones_register_sidebars() {
 		'id' => 'sidebar1',
 		'name' => __( 'Barra lateral', 'bonestheme' ),
 		'description' => __( 'Barra lateral.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s col-md-12 col-sm-4 col-xs-12">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
@@ -156,6 +163,16 @@ function bones_register_sidebars() {
         'name' => __( 'Publicidad interna 2', 'bonestheme' ),
         'description' => __( 'Publicidad interna 2', 'bonestheme' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'id' => 'bottom-home',
+        'name' => __( 'Barra Bottom Home', 'bonestheme' ),
+        'description' => __( 'Barra debajo del contenido del Home', 'bonestheme' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s col-sm-4 col-xs-12">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widgettitle">',
         'after_title' => '</h4>',
@@ -293,18 +310,237 @@ add_action('wp_print_styles', 'bones_fonts');
 //Array para guardar posts que no se deben repetir
 $posts_excluidos = array();
 
+//Bandera para mostrar header de las miniaturas
+$show_th_header = true;
+
+
 // Excluir posts repetidos en el home
-//function exclude_single_posts_home($query) {
-//    global $posts_excluidos;
-//    if ($query->is_home() AND $query->is_main_query()) {
-//        if (isset($posts_excluidos) && (count($posts_excluidos) > 0)){
-//            $query->set('post__not_in', $posts_excluidos);
+//function exclude_tax_multimedia($query) {
+//    if(!is_admin()){
+//        if ($query->is_main_query() && is_post_type_archive( 'multimedia' )) {
+//            $tax_array[] = array(
+//                'taxonomy'  => 'tipomultimedia',
+//                'field'     => 'slug',
+//                'terms'     => 'gastronomia', // exclude media posts in the news-cat custom taxonomy
+//                'operator'  => 'NOT IN'
+//                );
+//            $query->set( 'tax_query', $tax_array);
 //        }
-//        print_r($posts_excluidos);
 //    }
 //}
 //
-//add_action('pre_get_posts', 'exclude_single_posts_home');
+//add_action('pre_get_posts', 'exclude_tax_multimedia');
+
+//function jptweak_remove_share() {
+//    remove_filter( 'the_content', 'sharing_display',19 );
+//    remove_filter( 'the_excerpt', 'sharing_display',19 );
+//    if ( class_exists( 'Jetpack_Likes' ) ) {
+//        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+//    }
+//}
+
+//add_action( 'loop_start', 'jptweak_remove_share' );
 
 
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+/* DON'T DELETE THIS CLOSING TAG */
+
+/**
+ * Ajax search results
+ */
+
+add_filter('uwpqsf_result_tempt', 'customize_output', '', 4);
+function customize_output($results , $arg, $id, $getdata ){
+    // The Query
+    $apiclass = new uwpqsfprocess();
+    $query = new WP_Query( $arg );
+    ob_start(); $result = '';
+    // The Loop
+
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+
+            echo  '<div class="item--comercio col-xs-12 col-sm-6">';
+            require( "content-comercio.php" );
+            echo  '</div>';
+        }
+        echo  $apiclass->ajax_pagination($arg['paged'],$query->max_num_pages, 4, $id,'');
+    } else {
+        echo  'No hay resultados';
+    }
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    $results = ob_get_clean();
+    return $results;
+}
+
+//Agregar http:// a un link, si es necesario
+function addhttp($url) {
+    if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
+        $url = "http://" . $url;
+    }
+    return $url;
+}
+
+
+/** WP Advanced Search **/
+function guia_search_form() {
+    $loader_img = get_stylesheet_directory_uri().'/library/images/cargando.gif';
+
+//    $terms = get_terms('rubro_comercio');
+//    $query_terms = array();
+//
+//    foreach( $terms as $term ){
+//        $query_terms[] = $term->slug;
+//    };
+
+    $args = array();
+
+    $args['wp_query'] = array(
+        'post_type' => 'comercio',
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'posts_per_page' => 20,
+//        'tax_query' => array(
+//            array(
+//                'taxonomy' => 'rubro_comercio',
+//                'field'    => 'slug',
+//                'terms'    => $query_terms,
+//            )
+//        )
+    );
+
+    $args['form'] = array(
+        'class' => 'filtro-guia',
+        'auto_submit' => true,
+        'disable_wrappers' => false,
+        'ajax' => array(
+            'enabled' => true,
+            'button_text' => 'Ver más comercios',
+            'loading_img' => $loader_img,
+            'results_template' => 'wpas-filtro_guia-tmp.php'
+        )
+    );
+
+    $args['fields'][] = array(
+        'type' => 'search',
+        'label' => 'Buscar por nombre o servicio',
+        'placeholder' => 'Buscar...');
+    $args['fields'][] = array(
+        'type' => 'taxonomy',
+        'taxonomy' => 'rubro_comercio',
+        'format' => 'select',
+        'allow_null' => 'Todos los rubros',
+        'label' => 'Buscar por rubro');
+    $args['fields'][] = array(
+        'type' => 'reset',
+        'value' => 'Reestablecer');
+
+    register_wpas_form('guia-form', $args);
+}
+add_action('init', 'guia_search_form');
+
+
+//MENSAJE AUTOMATICA PARA FACEBOOK Y TWITTER
+// Check if JetPack is Installed and publicize is active, else do nothing.
+if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'publicize' ) ) {
+  function jeherve_publicize_hashtags() {
+    $post = get_post();
+    if ( ! empty( $post ) ) {
+      // Create our custom message
+      $custom_message = get_the_title();
+      update_post_meta( $post->ID, '_wpas_mess', $custom_message );
+    }
+  }
+// Save that message
+  function jeherve_cust_pub_message_save() {
+    add_action( 'save_post', 'jeherve_publicize_hashtags' );
+  }
+  add_action( 'publish_post', 'jeherve_cust_pub_message_save' );
+
+  //Dar soprote de Publicize a Tribe Events
+  add_action('init', 'soporte_publicize');
+  function soporte_publicize() {
+      add_post_type_support( 'tribe_events', 'publicize' );
+  }
+}
+
+/** Notificación Push (OneSignal) para mobile apps:
+ * Debo generar una notificación adicional, porque la original (enviada para subscriptores web push)
+ *   contiene el elemento launchURL, que hace que en Android se abra automáticamente el browser en lugar de la app
+ * Basado en https://wordpress.org/support/topic/variable-launchurl/
+ */
+add_filter('onesignal_send_notification', 'onesignal_send_notification_filter', 10, 4);
+
+function onesignal_send_notification_filter($fields, $new_status, $old_status, $post) {
+  /* Goal: We don't want to modify the original $fields array, because we want the
+    original web push notification to go out unmodified.
+    However, we want to send an additional notification to Android and iOS
+    devices with an additionalData property.
+  */
+
+  /* Not entirely sure if this PHP function makes a deep copy of our $fields array; it may not be necessary. */
+  $fields_dup = $fields;
+  $fields_dup['isAndroid'] = true;
+  $fields_dup['isIos'] = true;
+  $fields_dup['isAnyWeb'] = false;
+  $fields_dup['isWP'] = false;
+  $fields_dup['isAdm'] = false;
+  $fields_dup['isChrome'] = false;
+  unset($fields_dup['url']);
+  // Data custom: sólo el link - ToDo más data?
+  $fields_dup['data'] = [
+    'link' => $fields['url']
+  ];
+
+  /* Send another notification via cURL */
+  $ch = curl_init();
+  $onesignal_post_url = "https://onesignal.com/api/v1/notifications";
+  /* Hopefully OneSignal::get_onesignal_settings(); can be called outside of the plugin */
+  $onesignal_wp_settings = OneSignal::get_onesignal_settings();
+  $onesignal_auth_key = $onesignal_wp_settings['app_rest_api_key'];
+  curl_setopt($ch, CURLOPT_URL, $onesignal_post_url);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Authorization: Basic ' . $onesignal_auth_key
+  ));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HEADER, true);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields_dup));
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  // Optional: Turn off host verification if SSL errors for local testing
+  // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+  // Optional: cURL settings to help log cURL output response
+  // curl_setopt($ch, CURLOPT_FAILONERROR, false);
+  // curl_setopt($ch, CURLOPT_HTTP200ALIASES, array(400));
+  // curl_setopt($ch, CURLOPT_VERBOSE, true);
+  // curl_setopt($ch, CURLOPT_STDERR, $out);
+  $response = curl_exec($ch);
+
+  /* Optional: Log cURL output response
+  fclose($out);
+  $debug_output = ob_get_clean();
+  $curl_effective_url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+  $curl_http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  $curl_total_time = curl_getinfo($ch, CURLINFO_TOTAL_TIME);
+  onesignal_debug('OneSignal API POST Data:', $fields);
+  onesignal_debug('OneSignal API URL:', $curl_effective_url);
+  onesignal_debug('OneSignal API Response Status Code:', $curl_http_code);
+  if ($curl_http_code != 200) {
+  onesignal_debug('cURL Request Time:', $curl_total_time, 'seconds');
+  onesignal_debug('cURL Error Number:', curl_errno($ch));
+  onesignal_debug('cURL Error Description:', curl_error($ch));
+  onesignal_debug('cURL Response:', print_r($response, true));
+  onesignal_debug('cURL Verbose Log:', $debug_output);
+  }
+  */
+  curl_close($ch);
+  return $fields;
+}
+
+
+
+?>
