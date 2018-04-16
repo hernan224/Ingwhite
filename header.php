@@ -45,7 +45,7 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=879897482081350";
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=879897482081350";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -90,7 +90,7 @@
                     ?>
 					<span class="header-date">
                         <?php echo "$dias[$day] $numero_dia de $meses[$month] de $year"; ?>
-            						<!--Viernes 21 de Julio de 2017-->
+            						<!--Viernes 22 de Septiembre de 2017-->
                     </span>
 
                     <span id="radio-feeling" class="radio-stream" style="padding-right: 1em;">
@@ -142,9 +142,9 @@
                           <!-- LOGO NORMAL -->
                             <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">Ingenierowhite.com</a>
                           
-                          <!-- LOGO NAVIDAD 
-                          <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow" style="background: transparent url('http://ingenierowhite.com/sitio_core/wp-content/themes/Ingwhite/library/images/header-logo-navidad.png') no-repeat center center; background-size: contain; height: 90px; margin-top: 1rem;">Ingenierowhite.com</a>-->
-                        </div> <!-- end of #logo -->
+                          <!-- LOGO NAVIDAD -->
+                          <!--<a id="logo" href="<?php //echo home_url(); ?>" rel="nofollow" style="background: transparent url('http://ingenierowhite.com/sitio_core/wp-content/themes/Ingwhite/library/images/header-logo-navidad.png') no-repeat center center; background-size: contain; height: 90px; margin-top: 1rem;">Ingenierowhite.com</a>-->
+                        </div>  <!--end of #logo -->
                         
                         <div class="col-xs-3 col-sm-4">
 

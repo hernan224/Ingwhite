@@ -299,7 +299,7 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Montserrat:400,700');
+  wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Montserrat:400,700');
   wp_enqueue_style( 'googleFonts');
 }
 
@@ -488,11 +488,14 @@ function onesignal_send_notification_filter($fields, $new_status, $old_status, $
   $fields_dup['isWP'] = false;
   $fields_dup['isAdm'] = false;
   $fields_dup['isChrome'] = false;
-  unset($fields_dup['url']);
-  // Data custom: sólo el link - ToDo más data?
+  unset($fields_dup['url']); // quito url para que no se abra automaticamente. Lo incluyo en payload data
+  // Data custom: link, id y tipo
   $fields_dup['data'] = [
-    'link' => $fields['url']
+    'link' => $fields['url'],
+    'id' => $post->ID,
+    'tipo' => 'noticias' // usado para identificar en la app vs alertas. Una notificacion por evento tambien entra en este tipo
   ];
+  $fields_dup['included_segments'] = ['Noticias'];
 
   /* Send another notification via cURL */
   $ch = curl_init();
@@ -541,6 +544,31 @@ function onesignal_send_notification_filter($fields, $new_status, $old_status, $
   return $fields;
 }
 
+/**
+ * Agrego CORS header en la API, para GET
+ * Usa * for origin
+ */
+function add_cors_headers_api() {
+    
+	remove_filter( 'rest_pre_serve_request', 'rest_send_cors_headers' );
+	add_filter( 'rest_pre_serve_request', function( $value ) {
+		header( 'Access-Control-Allow-Origin: *' );
+		header( 'Access-Control-Allow-Methods: GET' );
+		header( 'Access-Control-Allow-Credentials: true' );
 
+		return $value;
+	});	
+}
+//add_action('rest_api_init', 'add_cors_headers_api', 15 );
+
+
+
+/**
+ * Desactivar reemplazo de imagenes de JetPack
+ */
+function tj_dequeue_devicepx() {
+ wp_dequeue_script( 'devicepx' );
+}
+add_action( 'wp_enqueue_scripts', 'tj_dequeue_devicepx' );
 
 ?>
